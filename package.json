@@ -1,6 +1,6 @@
 {
   "name": "package-xml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build a Salesforce Package.xml file from a src directory",
   "main": "index.js",
   "bin": {
@@ -31,6 +31,7 @@
   "dependencies": {
     "fs-extra": "^0.30.0",
     "libxmljs": "^0.18.0",
+    "lodash": "^4.15.0",
     "yargs": "^5.0.0"
   }
 }
