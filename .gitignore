@@ -1,0 +1,4 @@
+*.py[cod]
+.*.swp
+node_modules/
+test/fixtures
