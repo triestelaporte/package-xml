@@ -1,10 +1,7 @@
 module.exports = function () {
     return {
         files: [
-            './js/**/*.js*',
-            'test/*.js',
-            'test/fixtures/**/*.*',
-            '!test/*.spec.js'
+            './js/**/*.js*'
         ],
         tests: [
             'test/*.spec.js' 

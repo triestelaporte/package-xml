@@ -26,4 +26,9 @@ var argv = require('yargs')
     })
     .argv
 
-require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name)
+require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name).then(markup => {
+    var path = argv.dir.startsWith('/') ? argv.dir + '/package.xml' : process.cwd() + '/' + argv.dir + '/package.xml'
+    return utils.writeFile(path, markup)
+}).then(() => {
+    process.exit()
+})

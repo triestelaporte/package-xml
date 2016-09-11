@@ -18,6 +18,26 @@ module.exports = {
             return require('./packageUtils').getFilename(file.path, metadata.extension)
         })
     },
+    MetadataFilenameParser: function (metadata, contents) {
+        return this.BaseMetadataParser(metadata, contents)
+    },
+    MetadataFolderParser: function (metadata, contents) {
+        return contents.filter(file => {
+            // For each file we need to regex match the directory name and extension
+            //   and some other filters like not including hidden files, or meta xml files 
+            var dirMatch = file.path.match(new RegExp('/src/' + metadata.dir + '/'))
+            var isFile = file.stats.isFile()
+            var extensionMatch = file.path.endsWith(metadata.extension)
+            var isNamespaced = file.path.match(/____/)
+            var isMetaXml = file.path.match(/-meta.xml/)
+            var isHidden = file.path.startsWith('.')
+            var isMatch = dirMatch && isFile && extensionMatch && !isMetaXml && !isHidden
+            return isMatch
+        }).map(file => {
+            // Return the filename
+            return require('./packageUtils').getFolderAndFilename(file.path, metadata.extension, metadata.dir)
+        })
+    },
     MetadataXmlElementParser: function (metadata, contents) {
         var _metadata = metadata
         return contents.filter(file => {
@@ -39,33 +59,16 @@ module.exports = {
             return curr ? prev.concat(curr) : prev
         }, [])
     },
-    RecordTypeParser: function (metadata, contents) {
-        // debugger
-        return this.MetadataXmlElementParser(metadata, contents)
-    },
     CustomLabelsParser: function (metadata, contents) {
         // debugger
         return this.MetadataXmlElementParser(metadata, contents)
     },
-    MetadataFilenameParser: function (metadata, contents) {
+    CustomObjectParser: function (metadata, contents) {
         return this.BaseMetadataParser(metadata, contents)
     },
-    AuraBundleParser: function (metadata, contents) {
-        return contents.filter(file => {
-            // For each file we need to regex match the directory name and extension
-            //   and some other filters like not including hidden files, or meta xml files 
-            var isFile = file.stats.isFile()
-            var dirMatch = file.path.match(new RegExp('/src/' + metadata.dir + '/'))
-            // var extensionMatch = file.path.endsWith(metadata.extension)
-            var isMetaXml = file.path.match(/-meta.xml/)
-            var isHidden = file.path.startsWith('.')
-            return dirMatch && isFile && !isMetaXml && !isHidden //&& extensionMatch 
-        }).map(file => {
-            // Return the filename
-            var name = file.path.substring(0, file.path.lastIndexOf('/'))
-            name = name.substring(name.lastIndexOf('/') + 1)
-            return name
-        })
+    RecordTypeParser: function (metadata, contents) {
+        // debugger
+        return this.MetadataXmlElementParser(metadata, contents)
     },
     BusinessProcessParser: function (metadata, contents) {
         var _metadata = metadata
@@ -88,23 +91,21 @@ module.exports = {
             return curr ? prev.concat(curr) : prev
         }, [])
     },
-    CustomObjectParser: function (metadata, contents) {
-        return this.BaseMetadataParser(metadata, contents)
-    },
-    MetadataFolderParser: function (metadata, contents) {
+    AuraBundleParser: function (metadata, contents) {
         return contents.filter(file => {
             // For each file we need to regex match the directory name and extension
             //   and some other filters like not including hidden files, or meta xml files 
-            var dirMatch = file.path.match(new RegExp('/src/' + metadata.dir + '/'))
             var isFile = file.stats.isFile()
-            var extensionMatch = file.path.endsWith(metadata.extension)
+            var dirMatch = file.path.match(new RegExp('/src/' + metadata.dir + '/'))
+            // var extensionMatch = file.path.endsWith(metadata.extension)
             var isMetaXml = file.path.match(/-meta.xml/)
             var isHidden = file.path.startsWith('.')
-            var isMatch = dirMatch && isFile && extensionMatch && !isMetaXml && !isHidden
-            return isMatch
+            return dirMatch && isFile && !isMetaXml && !isHidden //&& extensionMatch 
         }).map(file => {
             // Return the filename
-            return require('./packageUtils').getFolderAndFilename(file.path, metadata.extension, metadata.dir)
+            var name = file.path.substring(0, file.path.lastIndexOf('/'))
+            name = name.substring(name.lastIndexOf('/') + 1)
+            return name
         })
     },
     DocumentParser: function (metadata, contents) {
