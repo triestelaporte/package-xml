@@ -267,7 +267,8 @@
     "reports": [
         {
             "type": "Report",
-            "class": "MetadataFolderParser"
+            "class": "MetadataFolderParser",
+            "extension": "report"
         }
     ],
     "scontrols": [

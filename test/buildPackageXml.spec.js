@@ -133,14 +133,23 @@ describe('Generate a package XML', function () {
     })
 
     it('should create the actual file', function () {
-        var path = root + '/package.xml'
-        var esbaXml = fs.readFileSync(path).toString()
+        // var esbaXml = fs.readFileSync(path).toString()
         var api_version = '37.0'
         var package_name = 'ESBA SPARKLE'
         return generator(root, api_version, package_name).then(markup => {
+            var path = root + '/package.xml'
             var markup = utils.writeFile(path, markup)
             var result = fs.readFileSync(path, 'utf8')
             expect(markup).to.eql(result)
+        })
+    })
+
+    it('should create the actual file', function () {
+        // var esbaXml = fs.readFileSync(path).toString()
+        var api_version = '37.0'
+        var package_name = 'ESBA SPARKLE'
+        return generator(root, api_version, package_name).then(markup => {
+            return expect(markup).to.not.match(/Case.IsEscalated/)
         })
     })
 

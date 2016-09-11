@@ -76,8 +76,13 @@ function getFolderAndFilename(path, extension, type) {
         var seperator = '/src/' + type + '/'
         var start = path.indexOf(seperator) + seperator.length;
         var end = path.lastIndexOf(extension) - 1
-        var ret = path.substring(start, end)
-        return ret
+        if(end > start){
+            var ret = path.substring(start, end)
+            return ret
+        } else {
+            var ret = path.substring(start)
+            return ret
+        }
     }
     return ''
 }
