@@ -24,6 +24,9 @@ function isHidden(file) {
 function isBaseMatch(file, metadata) {
     return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file)
 }
+function isFolderMatch(file, metadata) {
+    return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file) && !file.path.endsWith('unfiled$public')
+}
 function isFileMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)
 }
@@ -92,7 +95,6 @@ function getXmlElements(file, metadata) {
 function getXmlElement(file, metadata) {
     return getXmlElements(file, metadata)
         .filter(e => unmanagedElementFilter(e))
-        .filter(e => customElementFilter(e, metadata))
         .map(element => getElementName(file, metadata, element))
 }
 // ====================================================================================================
@@ -110,7 +112,7 @@ function MetadataFilenameParser(metadata, contents) {
 }
 function MetadataFolderParser(metadata, contents) {
     return contents
-        .filter(file => isBaseMatch(file, metadata))
+        .filter(file => isFolderMatch(file, metadata))
         .map(file => getFolderAndFilename(file, metadata)).sort()
 }
 function MetadataXmlElementParser(metadata, contents) {

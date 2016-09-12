@@ -133,6 +133,13 @@ describe('Generate a package XML', function () {
         return expect(generator(emptyDirectory, api_version, package_name)).to.eventually.eql(mocks.sampleXml)
     })
 
+    it('should generate the actual file', function () {
+        return generator(root, '37.0', 'ESBA SPARKLE').then(markup => {
+            expect(markup).to.not.match(/>Case.IsEscalated</)
+            expect(markup).to.not.match(/>Case.Description</)
+        })
+    })
+
     it('should create the actual file', function () {
         var api_version = '37.0'
         var package_name = 'ESBA SPARKLE'
@@ -141,13 +148,6 @@ describe('Generate a package XML', function () {
             fs.outputFile(path, markup)
             var result = fs.readFileSync(path, 'utf8')
             expect(markup).to.eql(result)
-        })
-    })
-
-    it('should create the actual file', function () {
-        return generator(root, '37.0', 'ESBA SPARKLE').then(markup => {
-            expect(markup).to.not.match(/>Case.IsEscalated</)
-            expect(markup).to.not.match(/>Case.Description</)
         })
     })
 
