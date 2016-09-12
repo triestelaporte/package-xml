@@ -34,7 +34,6 @@ module.exports = {
         }).sort()
     },
     MetadataXmlElementParser: function (metadata, contents) {
-        console.log(metadata)
         return contents.filter(file => {
             // For each file we need to regex match the directory name and extension
             //   and some other filters like not including hidden files, or meta xml files 

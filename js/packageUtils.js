@@ -4,7 +4,6 @@ var parsers = require('./parsers')
 var _ = require('lodash')
 
 module.exports = {
-    writeFile: writeFile,
     getDirectoryContents: getDirectoryContents,
     getMetadataTypeNames: getMetadataTypeNames,
     getMetadataTypes: getMetadataTypes,
@@ -13,18 +12,12 @@ module.exports = {
     getFolderAndFilename: getFolderAndFilename,
     getFolderAndFilenameWithExt: getFolderAndFilenameWithExt,
 }
-function writeFile(path, markup) {
-    fs.outputFileSync(path, markup)
-    console.info('Package.xml generated at ' + path)
-    return markup;
-}
 function getDirectoryContents(dir) {
     return new Promise(function (resolve, reject) {
         var contents = []
         if (dir) {
             fs.walk(dir)
                 .on('data', function (item) {
-                    // console.log(item)
                     contents.push(item)
                 })
                 .on('end', function () {
@@ -34,7 +27,7 @@ function getDirectoryContents(dir) {
                     throw err
                 })
                 .on('close', function () {
-                    console.log('finished')
+                    // console.log('finished')
                 })
         } else {
             resolve(contents)

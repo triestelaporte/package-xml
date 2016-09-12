@@ -6,7 +6,8 @@ var fs = require('fs-extra')
 var xml = require('libxmljs')
 var utils = require('./../js/packageUtils')
 var mocks = require('./../js/mocks')
-var root = '/Users/John/Github/package-xml/test/fixtures/src'
+// var root = '/Users/John/Github/package-xml/test/fixtures/src'
+var root = '/Users/John/Github/esba/src'
 
 // Private variables, set in Before action
 var metadata, generator, getDirectoryContentsPromise
@@ -138,7 +139,7 @@ describe('Generate a package XML', function () {
         var package_name = 'ESBA SPARKLE'
         return generator(root, api_version, package_name).then(markup => {
             var path = root + '/package.xml'
-            var markup = utils.writeFile(path, markup)
+            fs.outputFile(path, markup)
             var result = fs.readFileSync(path, 'utf8')
             expect(markup).to.eql(result)
         })
@@ -152,5 +153,6 @@ describe('Generate a package XML', function () {
             return expect(markup).to.not.match(/Case.IsEscalated/)
         })
     })
+
 
 })

@@ -27,8 +27,20 @@ var argv = require('yargs')
     .argv
 
 require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name).then(markup => {
-    var path = argv.dir.startsWith('/') ? argv.dir + '/package.xml' : process.cwd() + '/' + argv.dir + '/package.xml'
-    return utils.writeFile(path, markup)
-}).then(() => {
-    process.exit()
+    var path
+    if(argv.dir.startsWith('/')){
+        // Path is absolute
+        path = argv.dir + '/package.xml'
+    } else if (argv.dir.startsWith('./')) {
+        // Path is relative, or default
+        path = process.cwd() + '/' + argv.dir.substring(2) + '/package.xml'
+    } else {
+        // path is relative, without the default ./
+        path = process.cwd() + '/' + argv.dir + '/package.xml'
+    }
+    console.log('Path: ' + path)
+    return fs.outputFile(path, markup), (err, data) => {
+        console.log(err)
+        console.log(data)
+    })
 })
