@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 var fs = require('fs-extra')
-//  What I want to do is have a command line tool where I can type in something like the following to make a package.xml.  
-//  I neeed to pass in the src directory to scan, and then it should just spit out the package xml file
-//> package-xml -D ./src -n PackageName -v 37.0
-//  It has a default of ./src, so you can just go to your root, and type in package-xml, and it'll create your package xml
+var xml = require('libxmljs')
 var argv = require('yargs')
     .option('D', {
         alias: 'dir',
@@ -14,14 +11,13 @@ var argv = require('yargs')
     })
     .option('v', {
         alias: 'version',
-        demand: true,
-        default: '37.0',
+        demand: false,
         describe: 'The Saleforce API Version you wish to target with this package.',
         type: 'string'
     })
     .option('n', {
         alias: 'name',
-        demand: true,
+        demand: false,
         describe: 'The name of the package.',
         type: 'string'
     })

@@ -51,7 +51,8 @@ function isCustomObjectFilter(file) {
 function customElementFilter(element, metadata) {
     const customOnlyTypes = ['CustomField']
     // Only return custom types.  Don't get Standard elements.  This means the thing ends with __c
-    if (customOnlyTypes.indexOf(metadata.type) > 0) {
+    var idx = customOnlyTypes.indexOf(metadata.type)
+    if (idx > -1) {
         return element.text().match(/__c/)
     }
     return true

@@ -6,8 +6,6 @@ var fs = require('fs-extra')
 var self = {}
 
 module.exports = function (path, api_version, package_name) {
-    self.api_version = api_version
-    self.package_name = package_name
 
     // Get/Set path and insure it actually exists
     try {
@@ -15,6 +13,32 @@ module.exports = function (path, api_version, package_name) {
     } catch (error) {
         console.error(path + ' is not a real path.  Please check your path and try again')
         return Promise.reject(error)
+    }
+    
+    if (package_name) {
+        self.package_name = package_name
+    } else {
+        try {
+            var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')
+            var xmlDocument = xml.parseXmlString(xmlString)
+            var names = xmlDocument.find('./xmlns:fullName', 'http://soap.sforce.com/2006/04/metadata')
+            self.package_name = names[0].text()
+        } catch (error) {
+            console.error('No Package Name defined or available.  Please use the -n "PACKAGE NAME" option to define the Package name.')
+        }
+    }
+
+    if (api_version) {
+        self.api_version = api_version
+    } else {
+        try {
+            var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')
+            var xmlDocument = xml.parseXmlString(xmlString)
+            var versions = xmlDocument.find('./xmlns:version', 'http://soap.sforce.com/2006/04/metadata')
+            self.api_version = versions[0].text()
+        } catch (error) {
+            console.error('No Api Version defined or available.  Please use the -v "37.0" option to define the Package version.')
+        }
     }
 
     // ======================================
