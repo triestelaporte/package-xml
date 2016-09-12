@@ -1,17 +1,7 @@
 var fs = require('fs-extra')
 var metadata_map = require('./metadata_map.json')
-var parsers = require('./parsers')
 var _ = require('lodash')
 
-module.exports = {
-    getDirectoryContents: getDirectoryContents,
-    getMetadataTypeNames: getMetadataTypeNames,
-    getMetadataTypes: getMetadataTypes,
-    getMembers: getMembers,
-    getFilename: getFilename,
-    getFolderAndFilename: getFolderAndFilename,
-    getFolderAndFilenameWithExt: getFolderAndFilenameWithExt,
-}
 function getDirectoryContents(dir) {
     return new Promise(function (resolve, reject) {
         var contents = []
@@ -47,17 +37,6 @@ function getMetadataTypes() {
         return metadata_map[key]
     }))
 }
-function getMembers(type, contents, types) {
-    // return _.uniq(_.flatten(types.filter(metadata => metadata.type === type).map(metadata => parsers[metadata.class](metadata, contents)))).sort()
-    // var bleh = types.filter(metadata => metadata.type === type)
-    //          .map(metadata => parsers[metadata.class](metadata, contents))
-    return _.chain(
-        types.filter(metadata => metadata.type === type)
-            .map(metadata => {
-                return parsers[metadata.class](metadata, contents)
-            })
-    ).flatten().uniq().value()
-}
 function getFilename(path, extension) {
     if (path && extension) {
         return path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf(extension) - 1)
@@ -88,4 +67,13 @@ function getFolderAndFilenameWithExt(path, type) {
         return ret
     }
     return ''
+}
+
+module.exports = {
+    getDirectoryContents: getDirectoryContents,
+    getMetadataTypeNames: getMetadataTypeNames,
+    getMetadataTypes: getMetadataTypes,
+    getFilename: getFilename,
+    getFolderAndFilename: getFolderAndFilename,
+    getFolderAndFilenameWithExt: getFolderAndFilenameWithExt
 }

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+var fs = require('fs-extra')
 //  What I want to do is have a command line tool where I can type in something like the following to make a package.xml.  
 //  I neeed to pass in the src directory to scan, and then it should just spit out the package xml file
 //> package-xml -D ./src -n PackageName -v 37.0
@@ -27,20 +28,20 @@ var argv = require('yargs')
     .argv
 
 require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name).then(markup => {
-    var path
-    if(argv.dir.startsWith('/')){
+    return fs.outputFile(getPath(argv), markup, (err) => {
+        if (err) console.log(err)
+    });
+})
+
+function getPath(argv) {
+    if (argv.dir.startsWith('/')) {
         // Path is absolute
-        path = argv.dir + '/package.xml'
+        return argv.dir + '/package.xml'
     } else if (argv.dir.startsWith('./')) {
         // Path is relative, or default
-        path = process.cwd() + '/' + argv.dir.substring(2) + '/package.xml'
+        return process.cwd() + '/' + argv.dir.substring(2) + '/package.xml'
     } else {
         // path is relative, without the default ./
-        path = process.cwd() + '/' + argv.dir + '/package.xml'
+        return process.cwd() + '/' + argv.dir + '/package.xml'
     }
-    console.log('Path: ' + path)
-    return fs.outputFile(path, markup), (err, data) => {
-        console.log(err)
-        console.log(data)
-    })
-})
+}
