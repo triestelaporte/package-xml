@@ -21,11 +21,11 @@ describe('Generate a package XML', function () {
     })
 
     it('should get an xml document', function () {
-        return expect(generator(root, undefined, undefined)).to.eventually.contain('<?xml')
+        return expect(generator(root, '37.0', 'TEST PACKAGE')).to.eventually.contain('<?xml')
     })
 
     it('should not get an xml document for a bad path', function () {
-        return expect(generator(undefined, undefined, undefined)).to.eventually.be.rejected
+        return expect(generator(undefined, '37.0', 'TEST PACKAGE')).to.eventually.be.rejected
     })
 
     it('should get Apex Classes', function () {
@@ -145,7 +145,7 @@ describe('Generate a package XML', function () {
     })
 
     it('should create the actual file', function () {
-        return generator(root, undefined, undefined).then(markup => {
+        return generator(root, '37.0', 'ESBA SPARKLE').then(markup => {
             expect(markup).to.not.match(/>Case.IsEscalated</)
             expect(markup).to.not.match(/>Case.Description</)
         })
