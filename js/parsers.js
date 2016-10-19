@@ -66,7 +66,7 @@ function customElementFilter(element, metadata) {
 function merge(prev, curr, idx, arr) {
     return prev.concat(curr)
 }
-function getElementName(file, metadata, element) {
+function getFileAndElementName(file, metadata, element) {
     return getFilename(file, metadata) + '.' + element.text()
 }
 function getFilename(file, metadata) {
@@ -84,7 +84,8 @@ function getFolderAndFilenameWithExt(file, metadata) {
     return utils.getFolderAndFilenameWithExt(file.path, metadata.dir)
 }
 function getProcessName(file, metadata) {
-    return getXmlElements(file, metadata).map(element => getElementName(file, metadata, element))
+    return getXmlElements(file, metadata)
+        .map(element => getFileAndElementName(file, metadata, element))
 }
 function getXmlElements(file, metadata) {
     var xmlString = fs.readFileSync(file.path).toString()
@@ -92,10 +93,15 @@ function getXmlElements(file, metadata) {
     var elements = xmlDocument.find(metadata.options.item_xpath, 'http://soap.sforce.com/2006/04/metadata')
     return elements
 }
-function getXmlElement(file, metadata) {
+function getFileAndElement(file, metadata) {
     return getXmlElements(file, metadata)
         .filter(e => unmanagedElementFilter(e))
-        .map(element => getElementName(file, metadata, element))
+        .map(element => getFileAndElementName(file, metadata, element))
+}
+function getElement(file, metadata) {
+    return getXmlElements(file, metadata)
+        .filter(e => unmanagedElementFilter(e))
+        .map(element => element.text())
 }
 // ====================================================================================================
 // ======================================      Parsers     ============================================
@@ -118,11 +124,14 @@ function MetadataFolderParser(metadata, contents) {
 function MetadataXmlElementParser(metadata, contents) {
     return contents
         .filter(file => isMetadataXmlMatch(file, metadata))
-        .map(file => getXmlElement(file, metadata))
+        .map(file => getFileAndElement(file, metadata))
         .reduce(merge, [])
 }
 function CustomLabelsParser(metadata, contents) {
-    return MetadataXmlElementParser(metadata, contents)
+    return contents
+        .filter(file => isMetadataXmlMatch(file, metadata))
+        .map(file => getElement(file, metadata))
+        .reduce(merge, [])
 }
 function CustomObjectParser(metadata, contents) {
     return contents

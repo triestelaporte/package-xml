@@ -29,25 +29,29 @@
     "connectedApps": [
         {
             "type": "ConnectedApp",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "connectedapp"
         }
     ],
     "customMetadata": [
         {
             "type": "CustomMetadata",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "md"
         }
     ],
     "dashboards": [
         {
             "type": "Dashboard",
-            "class": "MetadataFolderParser"
+            "class": "MetadataFilenameParser",
+            "extension": "dashboard"
         }
     ],
     "dataSources": [
         {
             "type": "ExternalDataSource",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "datasource"
         }
     ],
     "documents": [
@@ -255,13 +259,15 @@
     "remoteSiteSettings": [
         {
             "type": "RemoteSiteSetting",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "remoteSite"
         }
     ],
     "reportTypes": [
         {
             "type": "ReportType",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "reportType"
         }
     ],
     "reports": [
@@ -294,7 +300,8 @@
     "translations": [
         {
             "type": "Translations",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "translation"
         }
     ],
     "triggers": [
@@ -307,7 +314,8 @@
     "weblinks": [
         {
             "type": "CustomPageWebLink",
-            "class": "MetadataFilenameParser"
+            "class": "MetadataFilenameParser",
+            "extension": "weblink"
         }
     ],
     "workflows": [
@@ -333,6 +341,14 @@
             "extension": "workflow",
             "options": {
                 "item_xpath": "./xmlns:rules/xmlns:fullName"
+            }
+        },
+        {
+            "type": "WorkflowTask",
+            "class": "MetadataXmlElementParser",
+            "extension": "workflow",
+            "options": {
+                "item_xpath": "./xmlns:tasks/xmlns:fullName"
             }
         }
     ]

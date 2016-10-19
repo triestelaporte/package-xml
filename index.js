@@ -9,6 +9,13 @@ var argv = require('yargs')
         describe: 'The path to the source directory containing your SFDC files and metadata.  Your package.xml file will end up here.',
         type: 'string'
     })
+    .option('X', {
+        alias: 'destroy',
+        demand: false,
+        default: false,
+        describe: 'Create a destructiveChanges.xml file.',
+        type: 'boolean'
+    })
     .option('v', {
         alias: 'version',
         demand: false,
