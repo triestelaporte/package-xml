@@ -145,7 +145,8 @@ describe('Generate a package XML', function () {
         var package_name = 'ESBA SPARKLE'
         return generator(root, api_version, package_name).then(markup => {
             var path = root + '/package.xml'
-            fs.outputFile(path, markup)
+            console.log(path)
+            fs.outputFile(path, markup);
             var result = fs.readFileSync(path, 'utf8')
             expect(markup).to.eql(result)
         })
