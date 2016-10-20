@@ -49,7 +49,7 @@ function isManagedObjectFilter(file) {
     return file.path.match(/__[\s\S]*__/)
 }
 function isCustomObjectFilter(file) {
-    return file.path.match(/__c.object$/)
+    return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/)
 }
 function customElementFilter(element, metadata) {
     const customOnlyTypes = ['CustomField']
