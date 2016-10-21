@@ -74,6 +74,13 @@
             "extension": "flexipage"
         }
     ],
+    "flows": [
+       {
+           "type": "Flow",
+           "class": "MetadataFilenameParser",
+           "extension": "flow"
+       }
+   ],
     "globalPicklists": [
         {
             "type": "GlobalPicklist",
