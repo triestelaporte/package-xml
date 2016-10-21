@@ -24,8 +24,7 @@ module.exports = function (path, api_version, package_name) {
             var names = xmlDocument.find('./xmlns:fullName', 'http://soap.sforce.com/2006/04/metadata')
             self.package_name = names[0].text()
         } catch (error) {
-            console.error('No Package Name defined or available.  Please use the -n "PACKAGE NAME" option to define the Package name.')
-            process.exit()
+            self.package_name = null
         }
     }
 
@@ -38,8 +37,7 @@ module.exports = function (path, api_version, package_name) {
             var versions = xmlDocument.find('./xmlns:version', 'http://soap.sforce.com/2006/04/metadata')
             self.api_version = versions[0].text()
         } catch (error) {
-            console.error('No Api Version defined or available.  Please use the -v "37.0" option to define the Package version.')
-            process.exit()
+            self.api_version = "37.0"
         }
     }
 
