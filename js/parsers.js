@@ -36,8 +36,8 @@ function isFileExtensionMatch(file, metadata) {
 function isMetadataXmlMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)
 }
-function isCustomObjectMatch(file, metadata) {
-    return !isManagedObjectFilter(file) && isCustomObjectFilter(file) && isFileExtensionMatch(file, metadata)
+function isCustomObjectMatch(file, metadata, managed) {
+    return (managed || !isManagedObjectFilter(file)) && isCustomObjectFilter(file) && isFileExtensionMatch(file, metadata)
 }
 // ====================================================================================================
 // ======================================      Filter     ===========================================
@@ -93,14 +93,14 @@ function getXmlElements(file, metadata) {
     var elements = xmlDocument.find(metadata.options.item_xpath, 'http://soap.sforce.com/2006/04/metadata')
     return elements
 }
-function getFileAndElement(file, metadata) {
+function getFileAndElement(file, metadata, managed) {
     return getXmlElements(file, metadata)
-        .filter(e => unmanagedElementFilter(e))
+        .filter(e => managed ? true : unmanagedElementFilter(e))
         .map(element => getFileAndElementName(file, metadata, element))
 }
-function getElement(file, metadata) {
+function getElement(file, metadata, managed) {
     return getXmlElements(file, metadata)
-        .filter(e => unmanagedElementFilter(e))
+        .filter(e => managed ? true : unmanagedElementFilter(e))
         .map(element => element.text())
 }
 // ====================================================================================================
@@ -111,48 +111,48 @@ function BaseMetadataParser(metadata, contents) {
         .filter(file => isFileExtensionMatch(file, metadata))
         .map(file => getFilename(file, metadata))
 }
-function MetadataFilenameParser(metadata, contents) {
+function MetadataFilenameParser(metadata, contents, managed) {
     return contents
         .filter(file => isBaseMatch(file, metadata))
         .map(file => getFolderAndFilename(file, metadata)).sort()
 }
-function MetadataFolderParser(metadata, contents) {
+function MetadataFolderParser(metadata, contents, managed) {
     return contents
         .filter(file => isFolderMatch(file, metadata))
         .map(file => getFolderAndFilename(file, metadata)).sort()
 }
-function MetadataXmlElementParser(metadata, contents) {
+function MetadataXmlElementParser(metadata, contents, managed) {
     return contents
         .filter(file => isMetadataXmlMatch(file, metadata))
-        .map(file => getFileAndElement(file, metadata))
+        .map(file => getFileAndElement(file, metadata, managed))
         .reduce(merge, [])
 }
-function CustomLabelsParser(metadata, contents) {
+function CustomLabelsParser(metadata, contents, managed) {
     return contents
         .filter(file => isMetadataXmlMatch(file, metadata))
         .map(file => getElement(file, metadata))
         .reduce(merge, [])
 }
-function CustomObjectParser(metadata, contents) {
+function CustomObjectParser(metadata, contents, managed) {
     return contents
-        .filter(file => isCustomObjectMatch(file, metadata))
+        .filter(file => isCustomObjectMatch(file, metadata, managed))
         .map(file => getFilename(file, metadata))
 }
-function RecordTypeParser(metadata, contents) {
-    return this.MetadataXmlElementParser(metadata, contents)
+function RecordTypeParser(metadata, contents, managed) {
+    return this.MetadataXmlElementParser(metadata, contents, managed)
 }
-function BusinessProcessParser(metadata, contents) {
+function BusinessProcessParser(metadata, contents, managed) {
     return contents
         .filter(file => isFileMatch(file, metadata))
         .map(file => getProcessName(file, metadata))
         .reduce(merge, [])
 }
-function AuraBundleParser(metadata, contents) {
+function AuraBundleParser(metadata, contents, managed) {
     return contents
         .filter(file => isFileMatch(file, metadata))
         .map(file => getAuraName(file, metadata))
 }
-function DocumentParser(metadata, contents) {
+function DocumentParser(metadata, contents, managed) {
     return contents
         .filter(file => isFileMatch(file, metadata))
         .map(file => getFolderAndFilenameWithExt(file, metadata))

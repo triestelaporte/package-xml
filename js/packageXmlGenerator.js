@@ -5,8 +5,8 @@ var metadata = utils.getMetadataTypes()
 var fs = require('fs-extra')
 var self = {}
 
-module.exports = function (path, api_version, package_name) {
-
+module.exports = function (path, api_version, package_name, managed) {
+    self.managed = managed
     // Get/Set path and insure it actually exists
     try {
         self.path = fs.realpathSync(path)
@@ -37,7 +37,7 @@ module.exports = function (path, api_version, package_name) {
             var versions = xmlDocument.find('./xmlns:version', 'http://soap.sforce.com/2006/04/metadata')
             self.api_version = versions[0].text()
         } catch (error) {
-            self.api_version = "37.0"
+            self.api_version = '37.0'
         }
     }
 
@@ -69,7 +69,7 @@ function get_package_xml(contents) {
     // ========= Print types sections =======
     // ======================================
     utils.getMetadataTypeNames().forEach(function (type) {
-        var members = require('./members')(type, contents, metadata)
+        var members = require('./members')(type, contents, metadata, self.managed)
         if (members.length > 0) {
             // Generate the XML and add it to the thing
             var Types = Package.node('types')

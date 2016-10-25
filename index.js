@@ -28,10 +28,18 @@ var argv = require('yargs')
         describe: 'The name of the package.',
         type: 'string'
     })
+    .option('m', {
+        alias: 'managed',
+        demand: false,
+        default: false,
+        describe: 'Include Managed Package Fields.',
+        type: 'boolean'
+    })
     .argv
-
-require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name).then(markup => {
+var start = Date.now()
+require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name, argv.managed).then(markup => {
     return fs.outputFile(getPath(argv), markup, (err) => {
+        console.log('Package.xml generated in ' + (Date.now() - start) + 'ms')
         if (err) console.log(err)
     });
 })
