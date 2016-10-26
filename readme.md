@@ -7,7 +7,7 @@ change directories to you project directory, which contains your src folder and 
 
 or, the long version...
 
-`package-xml -D "./src" -n "PackageName" -v "37.0"`
+`package-xml -D "./src" -n "PackageName" -v "37.0" -m`
 
 ## Options: (No options are required)
 * If no directory is provided, it will default to ./src
@@ -21,5 +21,7 @@ or, the long version...
                                            [string] [default: "37.0"]
   -n, --name     The name of the package.
                                            [string]
+  -m             Include Managed objects and fields
+                                           [boolean] 
 ```
 
