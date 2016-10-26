@@ -1,4 +1,4 @@
-49/152 Metdatatypes mapped
+73/152 Metdatatypes mapped
 Metadata Type	            Allows Wildcard (*)?	Description
 
 AccountSettings                     Not Applicable	Represents an organization’s account settings for account teams, account owner report, and the View Hierarchy link.
@@ -23,7 +23,7 @@ OrgPreferenceSettings               Not Applicable	Represents the unique org pre
 PathAssistantSettings               Not Applicable	Represents the Sales Path preference setting.
 ProductSettings                     Not Applicable	Represents organization preferences for quantity schedules, revenue schedules, and active flag interaction with prices.
 QuoteSettings                       Not Applicable	Enables or disables Quotes, which show proposed prices for products and services.
-RemoteSiteSetting                   Not Applicable	Represents a remote site setting. Before any Visualforce page, Apex callout, or JavaScript code using XmlHttpRequest in an s-control or custom button can call an external site, that site must be registered in the Remote Site Settings page, or the call fails.
+
 ActionLinkGroupTemplate             Yes	            Represents the action link group template. Action link templates let you reuse action link definitions and package and distribute action links. An action link is a button on a feed element. Clicking on an action link can take a user to another Web page, initiate a file download, or invoke an API call to an external server or Salesforce. Use action links to integrate Salesforce and third-party services into the feed. Every action link belongs to an action link group and action links within the group are mutually exclusive.
 ActionOverride                      No	            Represents an action override on a standard or custom object. Use it to create, update, edit, or delete action overrides.
 AnalyticSnapshot                    No	            Represents a reporting snapshot. A reporting snapshot lets you report on historical data. Authorized users can save tabular or summary report results to fields on a custom object, then map those fields to corresponding fields on a target object. They can then schedule when to run the report to load the custom object's fields with the report's data. Reporting snapshots enable you to work with report data similarly to how you work with other records in Salesforce.
@@ -34,6 +34,7 @@ ApexTrigger                         Yes	            Represents an Apex trigger. 
 AppMenu                     	    Yes	            Represents the Force.com app menu or the Salesforce1 navigation menu.
 ApprovalProcess                     Yes             Represents the metadata associated with an approval process. An approval process automates how records are approved in Salesforce. An approval process specifies each step of approval, including who to request approval from and what to do at each point of the process. Use the wildcard (*) symbol to retrieve all approval processes for all objects. You can’t use it to retrieve a subset of approval processes; syntax such as Lead.* is not supported.
 ArticleType                         Yes	            Represents the metadata associated with an article type.
+
 AssignmentRules                     Yes	            Represents assignment rules that allow you to automatically route cases to the appropriate users or queues.
 AuthProvider                        Yes	            Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.
 AuraDefinitionBundle                Yes	            Represents a Lightning definition bundle. A bundle contains a Lightning definition and all its related resources. The definition can be a component, application, event, interface, or a tokens collection.
@@ -117,6 +118,7 @@ Profile                             Yes	            Represents a user profile. A
 Queue                               Yes	            Represents a holding area for items before they are processed.
 QuickAction                         Yes	            Represents a specified create or update quick action for an object that then becomes available in the Chatter publisher. For example, you can create an action that, on the detail page of an account, allows a user to create a contact related to that account from the Chatter feed on that page. QuickAction can be created on objects that allow custom fields.
 RecordType                          No	            Represents the metadata associated with a record type. Record types let you offer different business processes, picklist values, and page layouts to different users.
+RemoteSiteSetting                   Not Applicable	Represents a remote site setting. Before any Visualforce page, Apex callout, or JavaScript code using XmlHttpRequest in an s-control or custom button can call an external site, that site must be registered in the Remote Site Settings page, or the call fails.
 Report                              No	            Represents a custom report.
 ReportType                          Yes	            Represents the metadata associated with a custom report type. Custom report types allow you to build a framework from which users can create and customize reports.
 Role                                Yes	            Represents a role in your organization.

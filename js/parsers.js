@@ -8,6 +8,11 @@ const utils = require('./packageUtils')
 function isDirMatch(file, metadata) {
     return file.path.match(new RegExp('/src/' + metadata.dir + '/'))
 }
+function isNameMatch(file, metadata) {
+    console.log(metadata.name)
+    console.log(file.path)
+    return file.path.match(new RegExp(metadata.name + '.settings'))
+}
 function isExtensionMatch(file, metadata) {
     return file.path.endsWith(metadata.extension)
 }
@@ -21,6 +26,9 @@ function isHidden(file) {
     return file.path.startsWith('.')
 }
 // Composed
+function isSettingsMatch(file, metadata) {
+    return isBaseMatch(file, metadata) && isNameMatch(file, metadata)
+}
 function isBaseMatch(file, metadata) {
     return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file)
 }
@@ -49,7 +57,7 @@ function isManagedObjectFilter(file) {
     return file.path.match(/__[\s\S]*__/)
 }
 function isCustomObjectFilter(file) {
-    return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/)
+    return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/) || file.path.match(/__kav.object$/)
 }
 function customElementFilter(element, metadata) {
     const customOnlyTypes = ['CustomField']
@@ -111,6 +119,11 @@ function BaseMetadataParser(metadata, contents) {
         .filter(file => isFileExtensionMatch(file, metadata))
         .map(file => getFilename(file, metadata))
 }
+function SettingsParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isSettingsMatch(file, metadata))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
+}
 function MetadataFilenameParser(metadata, contents, managed) {
     return contents
         .filter(file => isBaseMatch(file, metadata))
@@ -159,6 +172,7 @@ function DocumentParser(metadata, contents, managed) {
 }
 module.exports = {
     BaseMetadataParser: BaseMetadataParser,
+    SettingsParser: SettingsParser,
     MetadataFilenameParser: MetadataFilenameParser,
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,

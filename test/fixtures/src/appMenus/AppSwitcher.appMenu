@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AppMenu xmlns="http://soap.sforce.com/2006/04/metadata">
+   <appMenuItems>
+      <appMenuItem>
+         <name>standard__Sales</name>
+         <type>CustomApplication</type>
+      </appMenuItem>
+      <appMenuItem>
+         <name>standard__Support</name>
+         <type>CustomApplication</type>
+      </appMenuItem>
+      <appMenuItem>
+         <name>CustomApp1</name>
+         <type>CustomApplication</type>
+      </appMenuItem>
+      <appMenuItem>
+         <name>CustomApp2</name>
+         <type>CustomApplication</type>
+      </appMenuItem>
+      <appMenuItem>
+         <name>ConnectedApp1</name>
+         <type>ConnectedApp</type>
+      </appMenuItem>
+   </appMenuItems>
+</AppMenu>

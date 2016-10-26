@@ -1,0 +1,8 @@
+<aura:component>
+    <aura:attribute name="val1" type="String" default="Value"/>
+    <aura:attribute name="val2" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.myAction}"/>
+	<ui:outputText value='Hello world!'/>
+	<ui:outputText value='{!v.val1}'/>
+	<ui:outputText value='{!v.val2}'/>
+</aura:component>
