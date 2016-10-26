@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KnowledgeSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <answers>
+        <enableArticleCreation>false</enableArticleCreation>
+    </answers>
+    <cases>
+        <articlePDFCreationProfile>partner portal knowledge profile</articlePDFCreationProfile>
+        <articlePublicSharingSites>
+            <site>KnowledgeSite</site>
+            <site>PKB2Site</site>
+            <site>ChatterAnswersSite</site>
+        </articlePublicSharingSites>
+        <articlePublicSharingSitesChatterAnswers>
+            <site>ChatterAnswersSite</site>
+        </articlePublicSharingSitesChatterAnswers>
+        <assignTo>testall@kb.org</assignTo>
+        <defaultContributionArticleType>Support</defaultContributionArticleType>
+        <editor>simple</editor>
+        <enableArticleCreation>true</enableArticleCreation>
+        <enableArticlePublicSharingSites>true</enableArticlePublicSharingSites>
+        <useProfileForPDFCreation>true</useProfileForPDFCreation>
+    </cases>
+    <defaultLanguage>ja</defaultLanguage>
+    <enableCreateEditOnArticlesTab>true</enableCreateEditOnArticlesTab>
+    <enableExternalMediaContent>true</enableExternalMediaContent>
+    <enableKnowledge>true</enableKnowledge>
+    <showArticleSummariesCustomerPortal>true</showArticleSummariesCustomerPortal>
+    <showArticleSummariesInternalApp>true</showArticleSummariesInternalApp>
+    <showArticleSummariesPartnerPortal>true</showArticleSummariesPartnerPortal>
+    <showValidationStatusField>true</showValidationStatusField>
+    <suggestedArticles>
+      <caseFields>
+         <field>
+            <name>Subject</name>
+         </field>
+         <field>
+            <name>SuppliedEmail</name>
+         </field>
+      </caseFields>
+      <useSuggestedArticlesForCase>true</useSuggestedArticlesForCase>
+    </suggestedArticles>
+</KnowledgeSettings>

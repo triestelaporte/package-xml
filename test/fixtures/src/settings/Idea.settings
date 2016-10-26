@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<IdeasSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+   <enableIdeaThemes>true</enableIdeaThemes>
+   <enableIdeas>true</enableIdeas>
+   <enableIdeasReputation>true</enableIdeasReputation>
+   <enableChatterProfile>false</enableChatterProfile>
+   <ideasProfilePage>***name of Visualforce page***</ideasProfilePage>
+   <halfLife>2.6</halfLife>
+</IdeasSettings>

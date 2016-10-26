@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddressSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+  <countriesAndStates>
+    <countries>
+      <country>
+        <active>true</active>
+        <integrationValue>United States</integrationValue>
+        <isoCode>US</isoCode>
+        <label>United States</label>
+        <orgDefault>true</orgDefault>
+        <standard>true</standard>
+        <states>
+          <state>
+            <active>true</active>
+            <integrationValue>Alabama</integrationValue>
+            <isoCode>AL</isoCode>
+            <label>Alabama</label>
+            <standard>true</standard>
+            <visible>true</visible>
+          </state>
+          <state>
+            <active>true</active>
+            <integrationValue>Alaska</integrationValue>
+            <isoCode>AK</isoCode>
+            <label>Alaska</label>
+            <standard>true</standard>
+            <visible>true</visible>
+          </state>
+        </states>
+        <visible>true</visible>
+      </country>
+      <country>
+        <active>true</active>
+        <integrationValue>Canada</integrationValue>
+        <isoCode>CA</isoCode>
+        <label>Canada</label>
+        <orgDefault>false</orgDefault>
+        <states>
+          <state>
+            <active>true</active>
+            <integrationValue>Alberta</integrationValue>
+            <isoCode>AB</isoCode>
+            <label>Alberta</label>
+             <standard>true</standard>
+             <visible>true</visible>
+          </state>
+          <state>
+            <active>true</active>
+            <integrationValue>British Columbia</integrationValue>
+            <isoCode>BC</isoCode>
+            <label>British Columbia</label>
+            <standard>true</standard>
+            <visible>true</visible>
+          </state>
+        </states>
+        <visible>true</visible>
+      </country>
+      <country>
+        <active>true</active>
+        <integrationValue>Greenland</integrationValue>
+        <isoCode>GL</isoCode>
+        <label>Greenland</label>
+        <standard>true</standard>
+        <visible>false</visible>
+      </country>
+    </countries>
+  </countriesAndStates>
+</AddressSettings>

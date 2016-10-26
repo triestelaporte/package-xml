@@ -1,0 +1,8 @@
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>edit</actionName>
+        <type>visualforce</type>
+        <content>myEditVFPage</content>
+        <comment>This edit action is a lot safer.</comment>
+     </actionOverrides>
+</CustomObject>

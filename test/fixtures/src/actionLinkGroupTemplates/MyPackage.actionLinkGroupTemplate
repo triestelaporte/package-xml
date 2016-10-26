@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActionLinkGroupTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+   <actionLinkTemplates>
+      <actionUrl>/services/data/{!Bindings.word}/chatter/feed-elements</actionUrl>
+      <headers>Content-Type:{!Bindings.word3}</headers>
+      <isConfirmationRequired>true</isConfirmationRequired>
+      <isGroupDefault>true</isGroupDefault>
+      <labelKey>Add</labelKey>
+      <linkType>API</linkType>
+      <method>httpPost</method>
+      <position>0</position>
+      <requestBody>{"body":{"messageSegments":[{"type": "Text",
+      "text": "{!Bindings.word1}"}]},"subjectId": "{!Bindings.word2}",
+      "feedElementType": "feedItem"}</requestBody>
+      <userAlias>customExcludedUser</userAlias>
+      <userVisibility>CustomExcludedUser</userVisibility>
+   </actionLinkTemplates>
+   <category>Primary</category>
+   <executionsAllowed>OncePerUser</executionsAllowed>
+   <hoursUntilExpiration>10</hoursUntilExpiration>
+   <isPublished>true</isPublished>
+   <name>MyPackage</name>
+</ActionLinkGroupTemplate>

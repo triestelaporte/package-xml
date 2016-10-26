@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ChatterAnswersSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <emailFollowersOnBestAnswer>true</emailFollowersOnBestAnswer>
+    <emailFollowersOnReply>true</emailFollowersOnReply>
+    <emailOwnerOnPrivateReply>true</emailOwnerOnPrivateReply>
+    <emailOwnerOnReply>true</emailOwnerOnReply>
+    <enableChatterAnswers>true</enableChatterAnswers>
+    <enableFacebookSSO>true</enableFacebookSSO>
+    <enableInlinePublisher>true</enableInlinePublisher>
+    <enableReputation>true</enableReputation>
+    <enableRichTextEditor>true</enableRichTextEditor>
+    <facebookAuthProvider>FacebookAuthProvider</facebookAuthProvider>
+    <showInPortals>true</showInPortals>
+</ChatterAnswersSettings>

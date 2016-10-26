@@ -36,6 +36,7 @@ var argv = require('yargs')
         type: 'boolean'
     })
     .argv
+    
 var start = Date.now()
 require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name, argv.managed).then(markup => {
     return fs.outputFile(getPath(argv), markup, (err) => {

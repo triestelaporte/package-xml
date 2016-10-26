@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementSettings xmlns="http://soap.sforce.com/2006/04/metadata">&nbsp;&nbsp;&nbsp;
+    <assetLookupLimitedToActiveEntitlementsOnAccount>
+        false
+    </assetLookupLimitedToActiveEntitlementsOnAccount>&nbsp;&nbsp;&nbsp;
+    <assetLookupLimitedToActiveEntitlementsOnContact>
+        false
+    </assetLookupLimitedToActiveEntitlementsOnContact>&nbsp;&nbsp;&nbsp;
+    <assetLookupLimitedToSameAccount>
+        false
+    </assetLookupLimitedToSameAccount>&nbsp;&nbsp;&nbsp;
+    <assetLookupLimitedToSameContact>
+        false
+    </assetLookupLimitedToSameContact>&nbsp;&nbsp;&nbsp;
+    <enableEntitlements>
+        true
+    </enableEntitlements>&nbsp;&nbsp;&nbsp; 
+    <entitlementLookupLimitedToActiveStatus>
+        false
+    </entitlementLookupLimitedToActiveStatus>&nbsp;&nbsp;&nbsp;
+    <entitlementLookupLimitedToSameAccount>
+        false
+    </entitlementLookupLimitedToSameAccount>&nbsp;&nbsp;&nbsp;
+    <entitlementLookupLimitedToSameAsset>
+        false
+    </entitlementLookupLimitedToSameAsset>&nbsp;&nbsp;&nbsp;
+    <entitlementLookupLimitedToSameContact>
+        false
+    </entitlementLookupLimitedToSameContact>
+</EntitlementSettings>

@@ -1,21 +1,45 @@
 {
+    "actionLinkGroupTemplates": [
+        {
+            "type": "ActionLinkGroupTemplate",
+            "class": "MetadataFilenameParser",
+            "description": "Represents the action link group template. Action link templates let you reuse action link definitions and package and distribute action links. An action link is a button on a feed element. Clicking on an action link can take a user to another Web page, initiate a file download, or invoke an API call to an external server or Salesforce. Use action links to integrate Salesforce and third-party services into the feed. Every action link belongs to an action link group and action links within the group are mutually exclusive.",
+            "version": "33",
+            "extension": "actionLinkGroupTemplate"
+        }
+    ],
+    "analyticSnapshots": [
+        {
+            "type": "AnalyticSnapshot",
+            "class": "MetadataFilenameParser",
+            "description": "Represents a reporting snapshot. A reporting snapshot lets you report on historical data. Authorized users can save tabular or summary report results to fields on a custom object, then map those fields to corresponding fields on a target object. They can then schedule when to run the report to load the custom object's fields with the report's data. Reporting snapshots enable you to work with report data similarly to how you work with other records in Salesforce.",
+            "version": "16",
+            "extension": "analyticsnapshot"
+        }
+    ],
     "applications": [
         {
             "type": "CustomApplication",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "app"
         }
     ],
     "aura": [
         {
             "type": "AuraDefinitionBundle",
-            "class": "AuraBundleParser"
+            "class": "AuraBundleParser",
+            "description": "",
+            "version": ""
         }
     ],
     "classes": [
         {
             "type": "ApexClass",
             "class": "MetadataFilenameParser",
+            "description": "Represents an Apex class. An Apex class is a template or blueprint from which Apex objects are created. Classes consist of other classes, user-defined methods, variables, exception types, and static initialization code.",
+            "version": "10",
             "extension": "cls"
         }
     ],
@@ -23,6 +47,8 @@
         {
             "type": "ApexComponent",
             "class": "MetadataFilenameParser",
+            "description": "Represents a Visualforce component.",
+            "version": "12",
             "extension": "component"
         }
     ],
@@ -30,6 +56,8 @@
         {
             "type": "ConnectedApp",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "29",
             "extension": "connectedapp"
         }
     ],
@@ -37,6 +65,8 @@
         {
             "type": "CustomMetadata",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "md"
         }
     ],
@@ -44,6 +74,8 @@
         {
             "type": "Dashboard",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "dashboard"
         }
     ],
@@ -51,19 +83,25 @@
         {
             "type": "ExternalDataSource",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "datasource"
         }
     ],
     "documents": [
         {
             "type": "Document",
-            "class": "DocumentParser"
+            "class": "DocumentParser",
+            "description": "",
+            "version": ""
         }
     ],
     "email": [
         {
             "type": "EmailTemplate",
             "class": "MetadataFolderParser",
+            "description": "",
+            "version": "",
             "extension": "email"
         }
     ],
@@ -71,20 +109,26 @@
         {
             "type": "FlexiPage",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "flexipage"
         }
     ],
     "flows": [
-       {
-           "type": "Flow",
-           "class": "MetadataFilenameParser",
-           "extension": "flow"
-       }
-   ],
+        {
+            "type": "Flow",
+            "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
+            "extension": "flow"
+        }
+    ],
     "globalPicklists": [
         {
             "type": "GlobalPicklist",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "globalPicklist"
         }
     ],
@@ -92,6 +136,8 @@
         {
             "type": "HomePageComponent",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "homePageComponent"
         }
     ],
@@ -99,6 +145,8 @@
         {
             "type": "HomePageLayout",
             "class": "MetadataFilenameParser",
+            "description": "",
+            "version": "",
             "extension": "homePageLayout"
         }
     ],
@@ -284,6 +332,162 @@
             "extension": "report"
         }
     ],
+    "settings": [
+        {
+            "type": "AccountSettings",
+            "description": "Represents an organization’s account settings for account teams, account owner report, and the View Hierarchy link.",
+            "version": "29",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "ActivitiesSettings",
+            "description": "Represents an organization’s activity settings, and its user interface settings for the calendar.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "AddressSettings",
+            "description": "Represents the configuration of country and state picklists.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "BusinessHoursSettings",
+            "description": "Represents the metadata used to manage settings for business hours and holidays in entitlements, entitlement templates, campaigns, and cases.",
+            "version": "29",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "CaseSettings",
+            "description": "Represents an organization’s case settings, such as the default case owner, which case-related features are enabled, and which email templates are used for various case activities.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "ChatterAnswersSettings",
+            "description": "Represents the metadata used to manage settings for Chatter Answers.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "CompanySettings",
+            "description": "Represents global settings that affect multiple features in your organization.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "ContractSettings",
+            "description": "Represents contract settings.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "EntitlementSettings",
+            "description": "Represents an organization’s entitlement settings.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "ForecastingSettings",
+            "description": "Represents the Collaborative Forecasts settings options.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "IdeasSettings",
+            "description": "Represents the metadata used to manage settings for Ideas.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "KnowledgeSettings",
+            "description": "Represents the metadata used to manage settings for Salesforce Knowledge.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "MobileSettings",
+            "description": "Represents an organization’s mobile settings.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "SecuritySettings",
+            "description": "Represents an organization’s security settings. Security settings define trusted IP ranges for network access, password and login requirements, and session expiration and security settings.",
+            "version": "27",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "LiveAgentSettings",
+            "description": "Represents an organization’s Live Agent settings, such as whether or not Live Agent is enabled.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "NameSettings",
+            "description": "Enables or disables middle name and suffix attributes for the following person objects: Contact, Lead, Person Account, and User.",
+            "version": "31",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "OpportunitySettings",
+            "description": "Represents organization preferences for features such as automatic opportunity updates and similar-opportunity filters.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "OrderSettings",
+            "description": "Represents order settings.",
+            "version": "30",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "OrgPreferenceSettings",
+            "description": "Represents the unique org preference settings in a Salesforce org.",
+            "version": "37",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "PathAssistantSettings",
+            "description": "Represents the Sales Path preference setting.",
+            "version": "34",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "ProductSettings",
+            "description": "Represents organization preferences for quantity schedules, revenue schedules, and active flag interaction with prices.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        },
+        {
+            "type": "QuoteSettings",
+            "description": "Enables or disables Quotes, which show proposed prices for products and services.",
+            "version": "28",
+            "class": "MetadataFilenameParser",
+            "extension": "settings"
+        }
+    ],
     "scontrols": [
         {
             "type": "Scontrol",
@@ -302,6 +506,13 @@
             "type": "CustomTab",
             "class": "MetadataFilenameParser",
             "extension": "tab"
+        }
+    ],
+    "testSuites": [
+        {
+            "type": "ApexTestSuite",
+            "class": "MetadataFilenameParser",
+            "extension": "testsuite"
         }
     ],
     "translations": [

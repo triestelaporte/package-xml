@@ -1,0 +1,3 @@
+<apex:component access="public" layout="none">
+    <p>Hello World</p>
+</apex:component>
