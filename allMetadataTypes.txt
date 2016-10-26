@@ -34,15 +34,16 @@ AppMenu                     	    Yes	            Represents the Force.com app me
 ApprovalProcess                     Yes             Represents the metadata associated with an approval process. An approval process automates how records are approved in Salesforce. An approval process specifies each step of approval, including who to request approval from and what to do at each point of the process. Use the wildcard (*) symbol to retrieve all approval processes for all objects. You can’t use it to retrieve a subset of approval processes; syntax such as Lead.* is not supported.
 ArticleType                         Yes	            Represents the metadata associated with an article type.
 AssignmentRules                     Yes	            Represents assignment rules that allow you to automatically route cases to the appropriate users or queues.
-
 AuthProvider                        Yes	            Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.
 AuraDefinitionBundle                Yes	            Represents a Lightning definition bundle. A bundle contains a Lightning definition and all its related resources. The definition can be a component, application, event, interface, or a tokens collection.
 AutoResponseRules                   Yes	            Represents an auto-response rule that sets conditions for sending automatic email responses to lead or case submissions based on the attributes of the submitted record.
-BaseSharingRule                     Yes	            Represents the base container for criteria-based and owner-based sharing rules.
+BaseSharingRule  (deprecated)       Yes	            Represents the base container for criteria-based and owner-based sharing rules.
 BusinessProcess                     See desc    	The BusinessProcess metadata type enables you to display different picklist values for users based on their profile. Supports wildcard (*) only if a RecordType is specified.
 CallCenter                          Yes	            Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system.
 Certificate                         Yes	            Represents a certificate used for digital signatures which verify that requests are coming from your org. Certificates are used for either authenticated single sign-on with an external website, or when using your org as an identity provider.
 CleanDataService                    Yes	            Represents a data service that adds and updates data in standard objects.
+Dashboard                           No	            Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.
+
 Community                           Yes	            Represents a zone that contains Ideas or Chatter Answers objects. Zones are shared by the Ideas, Answers, and Chatter Answers features, allowing you to view and create zones from those locations.
 CommunityTemplateDefinition         Yes	            Represents the definition of a community template.
 CommunityThemeDefinition            Yes	            Represents the definition of a community theme.
@@ -64,7 +65,6 @@ CustomPageWebLink                   Yes	            Represents a custom link def
 CustomPermission                    Yes	            Represents a permission that grants access to a custom feature.
 CustomSite                          Yes	            Represents a Force.com site. Force.com Sites enables you to create public websites and applications that are directly integrated with your Salesforce organization—without requiring users to log in with a username and password.
 CustomTab                           Yes	            Represents a custom tab. Custom tabs let you display custom object data or other web content in Salesforce. When you add a custom tab to an app in Salesforce Classic, it displays as a tab. When you add a custom tab to an app in Lightning Experience, it displays as an item in the app’s navigation bar. When a tab displays a custom object, the tab name is the same as the custom object name; for page, s-control, or URL tabs, the name is arbitrary.
-Dashboard                           No	            Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.
 DataCategoryGroup                   Yes	            Represents a data category group.
 DelegateGroup                       Yes	            Represents a group of users who have the same administrative privileges. These groups are different from public groups used for sharing.
 Document                            No	            Represents a Document. All documents must be in a document folder, for example sampleFolder/TestDocument.

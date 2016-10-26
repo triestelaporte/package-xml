@@ -58,6 +58,19 @@
             "version": "32"
         }
     ],
+    "autoResponseRules": [
+        {
+            "type": "AutoResponseRules",
+            "class": "MetadataXmlElementParser",
+            "star": true,
+            "description": "Represents an auto-response rule that sets conditions for sending automatic email responses to lead or case submissions based on the attributes of the submitted record.",
+            "version": "27",
+            "extension": "autoResponseRules",
+            "options": {
+                "item_xpath": "./xmlns:autoResponseRule/xmlns:fullName"
+            }
+        }
+    ],
     "assignmentRules": [
         {
             "type": "AssignmentRules",
@@ -163,6 +176,16 @@
             "extension": "authprovider"
         }
     ],
+    "components": [
+        {
+            "type": "ApexComponent",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a Visualforce component.",
+            "version": "12",
+            "extension": "component"
+        }
+    ],
     "classes": [
         {
             "type": "ApexClass",
@@ -173,14 +196,34 @@
             "extension": "cls"
         }
     ],
-    "components": [
+    "callCenters": [
         {
-            "type": "ApexComponent",
+            "type": "CallCenter",
             "class": "MetadataFilenameParser",
             "star": true,
-            "description": "Represents a Visualforce component.",
-            "version": "12",
-            "extension": "component"
+            "description": "Represents the Call Center definition used to integrate Salesforce with a third-party computer-telephony integration (CTI) system.",
+            "version": "27",
+            "extension": "callCenter"
+        }
+    ],
+    "certs": [
+        {
+            "type": "Certificate",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a certificate used for digital signatures which verify that requests are coming from your org. Certificates are used for either authenticated single sign-on with an external website, or when using your org as an identity provider.",
+            "version": "36",
+            "extension": "crt"
+        }
+    ],
+    "cleanDataServices": [
+        {
+            "type": "CleanDataService",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a data service that adds and updates data in standard objects.",
+            "version": "38",
+            "extension": "cleanDataService"
         }
     ],
     "connectedApps": [
@@ -207,7 +250,7 @@
         {
             "type": "Dashboard",
             "class": "MetadataFilenameParser",
-            "star": true,
+            "star": false,
             "description": "",
             "version": "",
             "extension": "dashboard"

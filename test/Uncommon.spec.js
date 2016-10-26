@@ -71,4 +71,32 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Auto Response Rules', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('AutoResponseRules', files, metadata, true)
+            expect(members).to.contain('Case.ajbdeploytest2')
+        })
+    })
+
+    it('should get Call Centers', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('CallCenter', files, metadata, true)
+            expect(members).to.contain('DemoAdapterOpenCTI')
+        })
+    })
+
+    it('should get Certificates', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Certificate', files, metadata, true)
+            expect(members).to.contain('MyCertificateName')
+        })
+    })
+
+    it('should get Clean Data Services', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('CleanDataService', files, metadata, true)
+            expect(members).to.contain('DataService_Leads_Enrichment')
+        })
+    })
+
 })
