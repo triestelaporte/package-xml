@@ -9,9 +9,7 @@ function isDirMatch(file, metadata) {
     return file.path.match(new RegExp('/src/' + metadata.dir + '/'))
 }
 function isNameMatch(file, metadata) {
-    console.log(metadata.name)
-    console.log(file.path)
-    return file.path.match(new RegExp(metadata.name + '.settings'))
+    return file.path.match(new RegExp(metadata.name + '.' + metadata.extension))
 }
 function isExtensionMatch(file, metadata) {
     return file.path.endsWith(metadata.extension)
@@ -26,11 +24,14 @@ function isHidden(file) {
     return file.path.startsWith('.')
 }
 // Composed
-function isSettingsMatch(file, metadata) {
-    return isBaseMatch(file, metadata) && isNameMatch(file, metadata)
-}
 function isBaseMatch(file, metadata) {
     return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file)
+}
+function isAuthProviderMatch(file, metadata) {
+    return isFileExtensionMatch(file, metadata) && isNameMatch(file, metadata)
+}
+function isSettingsMatch(file, metadata) {
+    return isBaseMatch(file, metadata) && isNameMatch(file, metadata)
 }
 function isFolderMatch(file, metadata) {
     return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file) && !file.path.endsWith('unfiled$public')
@@ -39,7 +40,7 @@ function isFileMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)
 }
 function isFileExtensionMatch(file, metadata) {
-    return isBaseMatch(file, metadata) && isFile(file) && isExtensionMatch(file, metadata)
+    return isFileMatch(file, metadata) && isExtensionMatch(file, metadata)
 }
 function isMetadataXmlMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)
@@ -140,6 +141,11 @@ function MetadataXmlElementParser(metadata, contents, managed) {
         .map(file => getFileAndElement(file, metadata, managed))
         .reduce(merge, [])
 }
+function AuthProviderParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isAuthProviderMatch(file, metadata))
+        .map(file => 'AuthProvider')
+}
 function CustomLabelsParser(metadata, contents, managed) {
     return contents
         .filter(file => isMetadataXmlMatch(file, metadata))
@@ -171,6 +177,7 @@ function DocumentParser(metadata, contents, managed) {
         .map(file => getFolderAndFilenameWithExt(file, metadata))
 }
 module.exports = {
+    AuthProviderParser: AuthProviderParser,
     BaseMetadataParser: BaseMetadataParser,
     SettingsParser: SettingsParser,
     MetadataFilenameParser: MetadataFilenameParser,

@@ -1,4 +1,4 @@
-73/152 Metdatatypes mapped
+80/152 Metdatatypes mapped
 Metadata Type	            Allows Wildcard (*)?	Description
 
 AccountSettings                     Not Applicable	Represents an organization’s account settings for account teams, account owner report, and the View Hierarchy link.
@@ -23,7 +23,6 @@ OrgPreferenceSettings               Not Applicable	Represents the unique org pre
 PathAssistantSettings               Not Applicable	Represents the Sales Path preference setting.
 ProductSettings                     Not Applicable	Represents organization preferences for quantity schedules, revenue schedules, and active flag interaction with prices.
 QuoteSettings                       Not Applicable	Enables or disables Quotes, which show proposed prices for products and services.
-
 ActionLinkGroupTemplate             Yes	            Represents the action link group template. Action link templates let you reuse action link definitions and package and distribute action links. An action link is a button on a feed element. Clicking on an action link can take a user to another Web page, initiate a file download, or invoke an API call to an external server or Salesforce. Use action links to integrate Salesforce and third-party services into the feed. Every action link belongs to an action link group and action links within the group are mutually exclusive.
 ActionOverride                      No	            Represents an action override on a standard or custom object. Use it to create, update, edit, or delete action overrides.
 AnalyticSnapshot                    No	            Represents a reporting snapshot. A reporting snapshot lets you report on historical data. Authorized users can save tabular or summary report results to fields on a custom object, then map those fields to corresponding fields on a target object. They can then schedule when to run the report to load the custom object's fields with the report's data. Reporting snapshots enable you to work with report data similarly to how you work with other records in Salesforce.
@@ -34,8 +33,8 @@ ApexTrigger                         Yes	            Represents an Apex trigger. 
 AppMenu                     	    Yes	            Represents the Force.com app menu or the Salesforce1 navigation menu.
 ApprovalProcess                     Yes             Represents the metadata associated with an approval process. An approval process automates how records are approved in Salesforce. An approval process specifies each step of approval, including who to request approval from and what to do at each point of the process. Use the wildcard (*) symbol to retrieve all approval processes for all objects. You can’t use it to retrieve a subset of approval processes; syntax such as Lead.* is not supported.
 ArticleType                         Yes	            Represents the metadata associated with an article type.
-
 AssignmentRules                     Yes	            Represents assignment rules that allow you to automatically route cases to the appropriate users or queues.
+
 AuthProvider                        Yes	            Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.
 AuraDefinitionBundle                Yes	            Represents a Lightning definition bundle. A bundle contains a Lightning definition and all its related resources. The definition can be a component, application, event, interface, or a tokens collection.
 AutoResponseRules                   Yes	            Represents an auto-response rule that sets conditions for sending automatic email responses to lead or case submissions based on the attributes of the submitted record.

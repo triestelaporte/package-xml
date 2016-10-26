@@ -64,4 +64,11 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Assignment Rules', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('AssignmentRules', files, metadata, true)
+            expect(members).to.contain('Case.samplerule')
+        })
+    })
+
 })
