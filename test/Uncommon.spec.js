@@ -99,4 +99,25 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Dashboards', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Dashboard', files, metadata, true)
+            expect(members).to.contain('Samples/Sample')
+        })
+    })
+
+    it('should get Communities', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Community', files, metadata, true)
+            expect(members).to.contain('Sample')
+        })
+    })
+
+    it('should get Queues', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Queue', files, metadata, true)
+            expect(members).to.contain('Sample')
+        })
+    })
+
 })

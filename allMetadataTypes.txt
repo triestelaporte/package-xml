@@ -43,8 +43,8 @@ CallCenter                          Yes	            Represents the Call Center d
 Certificate                         Yes	            Represents a certificate used for digital signatures which verify that requests are coming from your org. Certificates are used for either authenticated single sign-on with an external website, or when using your org as an identity provider.
 CleanDataService                    Yes	            Represents a data service that adds and updates data in standard objects.
 Dashboard                           No	            Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.
-
 Community                           Yes	            Represents a zone that contains Ideas or Chatter Answers objects. Zones are shared by the Ideas, Answers, and Chatter Answers features, allowing you to view and create zones from those locations.
+
 CommunityTemplateDefinition         Yes	            Represents the definition of a community template.
 CommunityThemeDefinition            Yes	            Represents the definition of a community theme.
 CompactLayout                       Yes	            Represents the metadata associated with a compact layout.

@@ -226,6 +226,16 @@
             "extension": "cleanDataService"
         }
     ],
+    "communities": [
+        {
+            "type": "Community",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a zone that contains Ideas or Chatter Answers objects. Zones are shared by the Ideas, Answers, and Chatter Answers features, allowing you to view and create zones from those locations.",
+            "version": "27",
+            "extension": "community"
+        }
+    ],
     "connectedApps": [
         {
             "type": "ConnectedApp",
@@ -251,8 +261,8 @@
             "type": "Dashboard",
             "class": "MetadataFilenameParser",
             "star": false,
-            "description": "",
-            "version": "",
+            "description": "Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.",
+            "version": "14",
             "extension": "dashboard"
         }
     ],
@@ -497,6 +507,16 @@
             "extension": "quickAction"
         }
     ],
+    "queues": [
+        {
+            "type": "Queue",
+            "class": "MetadataFilenameParser",
+            "extension": "queue",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "24"
+        }
+    ],
     "remoteSiteSettings": [
         {
             "type": "RemoteSiteSetting",
@@ -694,6 +714,32 @@
             "class": "SettingsParser",
             "name": "Quote",
             "extension": "settings"
+        }
+    ],
+    "sharingRules": [
+        {
+            "type": "SharingCriteriaRule",
+            "class": "SharingRuleParser",
+            "extension": "sharingRule",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33"
+        },
+        {
+            "type": "SharingOwnerRule",
+            "class": "SharingRuleParser",
+            "extension": "sharingRule",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33"
+        },
+        {
+            "type": "SharingTerritoryRule",
+            "class": "SharingRuleParser",
+            "extension": "sharingRule",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33"
         }
     ],
     "scontrols": [
