@@ -716,32 +716,6 @@
             "extension": "settings"
         }
     ],
-    "sharingRules": [
-        {
-            "type": "SharingCriteriaRule",
-            "class": "SharingRuleParser",
-            "extension": "sharingRule",
-            "star": true,
-            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
-            "version": "33"
-        },
-        {
-            "type": "SharingOwnerRule",
-            "class": "SharingRuleParser",
-            "extension": "sharingRule",
-            "star": true,
-            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
-            "version": "33"
-        },
-        {
-            "type": "SharingTerritoryRule",
-            "class": "SharingRuleParser",
-            "extension": "sharingRule",
-            "star": true,
-            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
-            "version": "33"
-        }
-    ],
     "scontrols": [
         {
             "type": "Scontrol",
