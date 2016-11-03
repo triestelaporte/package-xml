@@ -1,6 +1,6 @@
 {
   "name": "package-xml",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Build a Salesforce Package.xml file from a src directory",
   "main": "index.js",
   "bin": {
