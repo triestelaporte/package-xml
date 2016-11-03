@@ -325,6 +325,16 @@
             "extension": "globalPicklist"
         }
     ],
+    "groups": [
+        {
+            "type": "Group",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a set of public groups, which can have users, roles, and other groups.",
+            "version": "24",
+            "extension": "group"
+        }
+    ],
     "homePageComponents": [
         {
             "type": "HomePageComponent",

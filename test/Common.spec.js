@@ -57,5 +57,12 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Groups', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Group', files, metadata, true)
+            expect(members).to.contain('Provider_Sharing')
+        })
+    })
+
 
 })
