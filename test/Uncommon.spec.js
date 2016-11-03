@@ -116,7 +116,28 @@ describe('Generate a package XML', function () {
     it('should get Queues', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('Queue', files, metadata, true)
-            expect(members).to.contain('Sample')
+            expect(members).to.contain('MemberQueue')
+        })
+    })
+
+    it('should get Criteria SharingRules', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('SharingCriteriaRule', files, metadata, true)
+            expect(members).to.contain('Account.AccountCriteriaShareWithCEO')
+        })
+    })
+
+    it('should get Owner SharingRules', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('SharingOwnerRule', files, metadata, true)
+            expect(members).to.contain('Account.Foo')
+        })
+    })
+
+    it('should get Territory SharingRules', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('SharingTerritoryRule', files, metadata, true)
+            expect(members).to.contain('Account.MyAccountTerritoryRule')
         })
     })
 

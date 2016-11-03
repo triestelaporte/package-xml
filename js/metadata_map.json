@@ -513,7 +513,7 @@
             "class": "MetadataFilenameParser",
             "extension": "queue",
             "star": true,
-            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "description": "Represents a holding area for items before they are processed.",
             "version": "24"
         }
     ],
@@ -720,6 +720,41 @@
         {
             "type": "Scontrol",
             "class": "MetadataFilenameParser"
+        }
+    ],
+    "sharingRules": [
+        {
+            "type": "SharingCriteriaRule",
+            "class": "MetadataXmlElementParser",
+            "extension": "sharingRules",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33",
+            "options": {
+                "item_xpath": "./xmlns:sharingCriteriaRules/xmlns:fullName"
+            }
+        },
+        {
+            "type": "SharingOwnerRule",
+            "class": "MetadataXmlElementParser",
+            "extension": "sharingRules",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33",
+            "options": {
+                "item_xpath": "./xmlns:sharingOwnerRules/xmlns:fullName"
+            }
+        },
+        {
+            "type": "SharingTerritoryRule",
+            "class": "MetadataXmlElementParser",
+            "extension": "sharingRules",
+            "star": true,
+            "description": "Represents the base container for sharing rules, which can be criteria-based, ownership-based, or territory-based. SharingRules enables you to share records with a set of users, using rules that specify the access level for the target user group.",
+            "version": "33",
+            "options": {
+                "item_xpath": "./xmlns:sharingTerritoryRules/xmlns:fullName"
+            }
         }
     ],
     "staticresources": [

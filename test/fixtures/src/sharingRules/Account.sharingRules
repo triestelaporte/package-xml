@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>AccountCriteriaShareWithCEO</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Read</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>startsWith</operation>
+            <value>Test</value>
+        </criteriaItems>
+        <description>my account criteria rule description</description>
+        <label>AccountCriteriaShareWithCEO</label>
+        <sharedTo>
+            <role>CEO</role>
+        </sharedTo>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>Foo</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Foo</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingTerritoryRules>
+        <fullName>MyAccountTerritoryRule</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>MyAccountTerritoryRule desc</description>
+        <label>MyAccountTerritoryRule</label>
+        <sharedFrom>
+            <territory>My_territory</territory>
+        </sharedFrom>
+        <sharedTo>
+            <role>CEO</role>
+        </sharedTo>
+    </sharingTerritoryRules>
+</SharingRules>

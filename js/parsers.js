@@ -1,6 +1,6 @@
-const xml = require('libxmljs')
-const fs = require('fs-extra')
-const utils = require('./packageUtils')
+var xml = require('libxmljs')
+var fs = require('fs-extra')
+var utils = require('./packageUtils')
 // ====================================================================================================
 // ======================================      Matchers     ===========================================
 // ====================================================================================================
@@ -17,15 +17,10 @@ function isExtensionMatch(file, metadata) {
 function isFile(file) {
     return file.stats.isFile()
 }
-function isMetaXml(file) {
-    return file.path.match(/-meta.xml/)
-}
-function isHidden(file) {
-    return file.path.startsWith('.')
-}
+
 // Composed
 function isBaseMatch(file, metadata) {
-    return isDirMatch(file, metadata) && !isMetaXml(file) && !isHidden(file)
+    return isDirMatch(file, metadata) && isExtensionMatch(file, metadata)
 }
 function isAuthProviderMatch(file, metadata) {
     return isFileExtensionMatch(file, metadata) && isNameMatch(file, metadata)
@@ -61,7 +56,7 @@ function isCustomObjectFilter(file) {
     return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/) || file.path.match(/__kav.object$/)
 }
 function customElementFilter(element, metadata) {
-    const customOnlyTypes = ['CustomField']
+    var customOnlyTypes = ['CustomField']
     // Only return custom types.  Don't get Standard elements.  This means the thing ends with __c
     var idx = customOnlyTypes.indexOf(metadata.type)
     if (idx > -1) {
