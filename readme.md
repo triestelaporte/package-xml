@@ -7,7 +7,7 @@ change directories to you project directory, which contains your src folder and 
 
 or, the long version...
 
-`package-xml -D "./src" -n "PackageName" -v "37.0" -m`
+`package-xml -D "./src" -n "Package Name" -v "37.0" -m -c`
 
 ## Options: (No options are required)
 * If no directory is provided, it will default to ./src
@@ -18,8 +18,6 @@ Options:
   -D, --dir           The path to the source directory containing your SFDC
                       files and metadata.  Your package.xml file will end up
                       here.               [string] [required] [default: "./src"]
-  -X, --destroy       Create a destructiveChanges.xml file.
-                                                      [boolean] [default: false]
   -v, --version       The Saleforce API Version you wish to target with this
                       package.                                          [string]
   -n, --name          The name of the package.                          [string]
@@ -33,15 +31,12 @@ Options:
 ## Clean Metadata
 
 The Clean Metadta option is available ass of version 2.1
-This option will clean out boilerplate metadata that can sometimes cause problems with deploying between different orgs
-Also, if some metadata is not valid, visible, or enabled, then it shouldn't go in the package, hence we need to clean up the metadata.
+This option will clean out boilerplate metadata that can sometimes cause problems with deploying between different orgs. Also, if some metadata is not valid, visible, or enabled, then it shouldn't go in the package, hence we need to clean up the metadata.
 
 Below is the standard configuration for cleaning files. When using the "clean" option, this is the configuration that will be used.
 
 But we all know you will probably want a custom clean config.  In that case, copy the config below and customie it.
-The selectors you see are simple xml path selectors.
-
-The `xmlns` namespace is required on element selectors, so if you create a custom clean configuration, be sure to include that on any element selectors.
+The selectors you see are simple xml path selectors. The `xmlns` namespace is required on element selectors, so if you create a custom configuration, be sure to include that on any element selectors.
 For tips on how to write selectors, you can go to w3c at [http://www.w3schools.com/xml/xml_syntax.asp](http://www.w3schools.com/xml/xml_syntax.asp)
 All options are optional, so you probably don't need to inlcude the namespace option unless you're doing something very unexpected
 
