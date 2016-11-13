@@ -5,18 +5,18 @@ var metadata = utils.getMetadataTypes()
 var fs = require('fs-extra')
 var self = {}
 
-module.exports = function (path, api_version, package_name, managed) {
-    self.managed = managed
+module.exports = function (config) {
+    self.managed = config.managed
     // Get/Set path and insure it actually exists
     try {
-        self.path = fs.realpathSync(path)
+        self.path = fs.realpathSync(config.dir)
     } catch (error) {
-        console.error(path + ' is not a real path.  Please check your path and try again')
+        console.error(config.dir + ' is not a real path.  Please check your path and try again')
         return Promise.reject(error)
     }
     
-    if (package_name) {
-        self.package_name = package_name
+    if (config.name) {
+        self.package_name = config.name
     } else {
         try {
             var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')
@@ -28,8 +28,8 @@ module.exports = function (path, api_version, package_name, managed) {
         }
     }
 
-    if (api_version) {
-        self.api_version = api_version
+    if (config.version) {
+        self.api_version = version
     } else {
         try {
             var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')

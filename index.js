@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 var fs = require('fs-extra')
 var xml = require('libxmljs')
+var path = require('path')
 var argv = require('yargs')
     .option('D', {
         alias: 'dir',
@@ -35,25 +36,64 @@ var argv = require('yargs')
         describe: 'Include Managed Package Fields.',
         type: 'boolean'
     })
+    .option('c', {
+        alias: 'clean',
+        demand: false,
+        default: false,
+        describe: 'Clean the Metadata files',
+        type: 'boolean'
+    })
+    .option('C', {
+        alias: 'clean-config',
+        demand: false,
+        default: '',
+        describe: 'Clean the Metadata files from a provided configuration file',
+        type: 'string'
+    })
+    .help('h')
     .argv
-    
-var start = Date.now()
-require('./js/packageXmlGenerator')(argv.dir, argv.version, argv.name, argv.managed).then(markup => {
-    return fs.outputFile(getPath(argv), markup, (err) => {
-        console.log('Package.xml generated in ' + (Date.now() - start) + 'ms')
-        if (err) console.log(err)
-    });
-})
 
-function getPath(argv) {
-    if (argv.dir.startsWith('/')) {
-        // Path is absolute
-        return argv.dir + '/package.xml'
-    } else if (argv.dir.startsWith('./')) {
-        // Path is relative, or default
-        return process.cwd() + '/' + argv.dir.substring(2) + '/package.xml'
+var start = Date.now()
+argv.dir = getPath(argv.dir)
+if (argv.clean) {
+    return require('./js/clean-xml')(argv).then((res) => reportFinished(null, 'Clean'))
+} else if (argv['clean-config']) {
+    Object.assign(argv, fs.readJsonSync(getPath(argv['clean-config'])))
+    return require('./js/clean-xml')(argv).then((res) => reportFinished(null, 'Clean'))
+} else {
+    return require('./js/packageXmlGenerator')(argv).then(markup => {
+        return fs.outputFile(argv.dir + '/package.xml', markup, (err) => reportFinished(err, 'Package.xml'));
+    })
+}
+
+function getPath(filePath) {
+    if (filePath.startsWith('/')) {
+        // Dir is absolute path, make sure it's real
+        try {
+            if (fs.realpathSync(filePath)) {
+                return filePath
+            } else {
+                throw (filePath + ' is not a real path.  Please check your path and try again')
+            }
+        } catch (error) {
+            throw (filePath + ' is not a real path.  Please check your path and try again')
+        }
     } else {
-        // path is relative, without the default ./
-        return process.cwd() + '/' + argv.dir + '/package.xml'
+        // Dir is relative path.. try to normalize it
+        try {
+            var filePath = path.normalize(process.cwd() + '/' + filePath)
+            if (fs.realpathSync(filePath)) {
+                return filePath
+            } else {
+                throw (filePath + ' is not a real path.  Please check your path and try again')
+            }
+        } catch (error) {
+            throw (filePath + ' is not a real path.  Please check your path and try again')
+        }
     }
+}
+
+function reportFinished(err, msg){
+    if (err) console.log(err)
+    console.log(msg + ' process completed in ' + (Date.now() - start) + 'ms')
 }
