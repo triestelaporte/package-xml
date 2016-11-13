@@ -45,9 +45,8 @@ All options are optional, so you probably don't need to inlcude the namespace op
     "selectors": [
         "./xmlns:packageVersions",
         "./xmlns:applicationVisibilities[xmlns:visible = 'false']",
-        "./xmlns:classAccesses[xmlns:enabled='false']",
-        "./xmlns:fieldPermissions[xmlns:editable='false' and xmlns:readable='false']",
-        "./xmlns:fieldPermissions[editable = 'false' and readable = 'false']",
+        "./xmlns:classAccesses[xmlns:enabled = 'false']",
+        "./xmlns:fieldPermissions[xmlns:editable = 'false' and xmlns:readable = 'false']",
         "./xmlns:objectPermissions[xmlns:allowCreate = 'false' and xmlns:allowDelete = 'false' and xmlns:allowEdit = 'false' and xmlns:allowRead = 'false' and xmlns:modifyAllRecords = 'false' and xmlns:viewAllRecords = 'false']",
         "./xmlns:pageAccesses[xmlns:enabled = 'false']",
         "./xmlns:userPermissions[xmlns:enabled = 'false']",
