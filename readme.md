@@ -35,7 +35,7 @@ This option will clean out boilerplate metadata that can sometimes cause problem
 
 Below is the standard configuration for cleaning files. When using the "clean" option, this is the configuration that will be used.
 
-But we all know you will probably want a custom clean config.  In that case, copy the config below and customie it.
+But we all know you will probably want a custom clean config.  In that case, copy the config below and customize it.
 The selectors you see are simple xml path selectors. The `xmlns` namespace is required on element selectors, so if you create a custom configuration, be sure to include that on any element selectors.
 For tips on how to write selectors, you can go to w3c at [http://www.w3schools.com/xml/xml_syntax.asp](http://www.w3schools.com/xml/xml_syntax.asp)
 All options are optional, so you probably don't need to inlcude the namespace option unless you're doing something very unexpected
