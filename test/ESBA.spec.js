@@ -14,18 +14,27 @@ describe('Generate a package XML', function () {
     var root = '/Users/John/Github/esba/src'
     var metadata, generator, getDirectoryContentsPromise
     before(function () {
-        console.log(root)
         getDirectoryContentsPromise = utils.getDirectoryContents(root)
         metadata = utils.getMetadataTypes()
         generator = require('./../js/packageXmlGenerator')
     })
 
     it('should get an xml document', function () {
-        return expect(generator(root, '37.0', 'TEST PACKAGE')).to.eventually.contain('<?xml')
+        var config = {
+            dir: root,
+            name: 'TEST PACKAGE',
+            version: '36.0'
+        }
+        return expect(generator(config)).to.eventually.contain('<?xml')
     })
 
     it('should not get an xml document for a bad path', function () {
-        return expect(generator(undefined, '37.0', 'TEST PACKAGE')).to.eventually.be.rejected
+        var config = {
+            dir: undefined,
+            name: 'TEST PACKAGE',
+            version: '36.0'
+        }
+        return expect(generator(config)).to.eventually.be.rejected
     })
 
     it('should get Apex Classes', function () {
@@ -101,7 +110,7 @@ describe('Generate a package XML', function () {
     it('should get PermissionSet', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('PermissionSet', files, metadata)
-            expect(members).to.contain('All_Access')
+            expect(members).to.contain('Finance_Manager')
         })
     })
 
@@ -127,30 +136,40 @@ describe('Generate a package XML', function () {
     })
 
     it('should make a sample Package XML from an empty directory', function () {
-        var emptyDirectory = '/Users/John/Github/package-xml/test/fixtures/empty'
-        var api_version = '36.0'
-        var package_name = 'Test & Package'
-        return expect(generator(emptyDirectory, api_version, package_name)).to.eventually.eql(mocks.sampleXml)
+        var config = {
+            dir: '/Users/John/Github/package-xml/test/fixtures/empty',
+            name: 'Test & Package',
+            version: '36.0'
+        }
+        return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
 
     it('should generate the actual file', function () {
-        return generator(root, '37.0', 'ESBA SPARKLE').then(markup => {
-            expect(markup).to.not.match(/>Case.IsEscalated</)
-            expect(markup).to.not.match(/>Case.Description</)
+        var config = {
+            dir: root,
+            name: 'ESBA SPARKLE',
+            version: '37.0'
+        }
+        return generator(config).then(markup => {
+            expect(markup).to.match(/>Case.IsEscalated</)
+            expect(markup).to.match(/>Case.Description</)
         })
     })
 
-    it('should create the actual file', function () {
-        var api_version = '37.0'
-        var package_name = 'ESBA SPARKLE'
-        return generator(root, api_version, package_name).then(markup => {
-            var path = root + '/package.xml'
-            console.log(path)
-            fs.outputFile(path, markup);
-            var result = fs.readFileSync(path, 'utf8')
-            expect(markup).to.eql(result)
-        })
-    })
+    // it('should create the actual file', function () {
+    //     var config = {
+    //         dir: root,
+    //         name: 'ESBA SPARKLE',
+    //         version: '37.0'
+    //     }
+    //     return generator(config).then(markup => {
+    //         var path = root + '/package.xml'
+    //         console.log(path)
+    //         fs.outputFile(path, markup);
+    //         var result = fs.readFileSync(path, 'utf8')
+    //         expect(markup).to.eql(result)
+    //     })
+    // })
 
 
 })

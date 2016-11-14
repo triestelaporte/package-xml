@@ -22,6 +22,13 @@ describe('Generate a package XML', function () {
         generator = require('./../js/packageXmlGenerator')
     })
 
+    it('should get Custom Applications', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('CustomApplication', files, metadata, true)
+            expect(members).to.contain('Collaboration')
+        })
+    })
+
     it('should get Components', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('ApexComponent', files, metadata, true)
@@ -61,6 +68,31 @@ describe('Generate a package XML', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('Group', files, metadata, true)
             expect(members).to.contain('Provider_Sharing')
+        })
+    })
+
+
+
+    it('should make a sample Package XML from an empty directory', function () {
+        var config = {
+            dir: '/Users/John/Github/package-xml/test/fixtures/empty',
+            name: 'Test & Package',
+            version: '36.0'
+        }
+        return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
+    })
+
+    it('should create the actual file', function () {
+        var config = {
+            dir: '/Users/John/Github/esba/src',
+            name: 'ESBA SPARKLE',
+            version: '37.0'
+        }
+        return generator(config).then(markup => {
+            var path = root + '/package.xml'
+            fs.outputFile(path, markup)
+            var result = fs.readFileSync(path, 'utf8')
+            expect(markup).to.eql(result)
         })
     })
 

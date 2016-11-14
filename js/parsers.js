@@ -12,9 +12,10 @@ function isNameMatch(file, metadata) {
     return file.path.match(new RegExp(metadata.name + '.' + metadata.extension))
 }
 function isExtensionMatch(file, metadata) {
-    return file.path.endsWith(metadata.extension)
+    return (metadata.extension === undefined && !file.path.endsWith('-meta.xml')) || file.path.endsWith(metadata.extension)
 }
-function isFile(file) {
+function isFile(file, metadata) {
+    // return file.stats.isDirectory()
     return file.stats.isFile()
 }
 
@@ -29,7 +30,7 @@ function isSettingsMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isNameMatch(file, metadata)
 }
 function isFolderMatch(file, metadata) {
-    return isDirMatch(file, metadata) && !isFile(file) && !file.path.endsWith('unfiled$public')
+    return isDirMatch(file, metadata) && !file.path.endsWith('unfiled$public')
 }
 function isFileMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)

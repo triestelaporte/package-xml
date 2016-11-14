@@ -29,7 +29,7 @@ module.exports = function (config) {
     }
 
     if (config.version) {
-        self.api_version = version
+        self.api_version = config.version
     } else {
         try {
             var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')

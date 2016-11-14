@@ -22,6 +22,26 @@
             "outDir": null
         },
         {
+            "name": "ESBA",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/index.js",
+            "stopOnEntry": false,
+            "args": ["-D", "/Users/John/Github/esba/src/", "-m -v \"37.0\""],
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "console": "integratedTerminal",
+            "sourceMaps": false,
+            "outDir": null
+        },
+        {
             "name": "Debug Mocha",
             "request": "launch",
             "type": "node",
@@ -29,7 +49,7 @@
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "args": ["test/clean-xml.spec.js", "--colors"],
+            "args": ["test/ESBA.spec.js", "--colors"],
             "env": { }
         }
     ]
