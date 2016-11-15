@@ -30,7 +30,7 @@ function isSettingsMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isNameMatch(file, metadata)
 }
 function isFolderMatch(file, metadata) {
-    return isDirMatch(file, metadata) && !file.path.endsWith('unfiled$public')
+    return isDirMatch(file, metadata) && !file.path.endsWith('-meta.xml') && !file.path.endsWith('unfiled$public')
 }
 function isFileMatch(file, metadata) {
     return isBaseMatch(file, metadata) && isFile(file)

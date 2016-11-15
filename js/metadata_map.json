@@ -288,7 +288,7 @@
     "email": [
         {
             "type": "EmailTemplate",
-            "class": "MetadataFolderParser",
+            "class": "MetadataFilenameParser",
             "star": true,
             "description": "",
             "version": "",
@@ -544,7 +544,7 @@
     "reports": [
         {
             "type": "Report",
-            "class": "MetadataFolderParser",
+            "class": "MetadataFilenameParser",
             "extension": "report"
         }
     ],

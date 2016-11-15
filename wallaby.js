@@ -4,7 +4,7 @@ module.exports = function () {
             './js/**/*.js*'
         ],
         tests: [
-            'test/Demandbase.spec.js' 
+            'test/ESBA.spec.js' 
         ],
         'testFramework': 'mocha',
         env: {

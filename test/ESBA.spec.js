@@ -125,6 +125,16 @@ describe('Generate a package XML', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('EmailTemplate', files, metadata)
             expect(members).to.contain('PPM_Email_Templates/PPM_Vetting_Document_Request')
+            expect(members).to.not.contain('RAM_Email_Templates-meta.xml')
+            expect(members).to.not.contain('PPM_Email_Templates-meta.xml')
+        })
+    })
+
+    it('should get Reports', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Report', files, metadata)
+            expect(members).to.contain('PPM_Reports/ESBA_BHPN_Providers')
+            expect(members).to.not.contain('PPM_Reports/ESBA_BHPN_Providers-meta.xml')
         })
     })
 
@@ -155,21 +165,6 @@ describe('Generate a package XML', function () {
             expect(markup).to.match(/>Case.Description</)
         })
     })
-
-    // it('should create the actual file', function () {
-    //     var config = {
-    //         dir: root,
-    //         name: 'ESBA SPARKLE',
-    //         version: '37.0'
-    //     }
-    //     return generator(config).then(markup => {
-    //         var path = root + '/package.xml'
-    //         console.log(path)
-    //         fs.outputFile(path, markup);
-    //         var result = fs.readFileSync(path, 'utf8')
-    //         expect(markup).to.eql(result)
-    //     })
-    // })
 
 
 })

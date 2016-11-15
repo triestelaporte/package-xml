@@ -1182,11 +1182,7 @@
     <name>Document</name>
   </types>
   <types>
-    <members>PPM_Email_Templates</members>
-    <members>PPM_Email_Templates-meta.xml</members>
     <members>PPM_Email_Templates/PPM_Vetting_Document_Request</members>
-    <members>RAM_Email_Templates</members>
-    <members>RAM_Email_Templates-meta.xml</members>
     <members>RAM_Email_Templates/ABA_Treatment_Authorization_Overdue</members>
     <members>RAM_Email_Templates/Approval_Overdue</members>
     <members>RAM_Email_Templates/Assessment_Appointment_Missed</members>
@@ -1486,8 +1482,6 @@
     <name>RecordType</name>
   </types>
   <types>
-    <members>PPM_Reports</members>
-    <members>PPM_Reports-meta.xml</members>
     <members>PPM_Reports/ESBA_BHPN_Providers</members>
     <members>PPM_Reports/Pracititioners_by_Pracititoner_Type</members>
     <members>PPM_Reports/Pracititioners_with_Licenses_Expiring</members>
@@ -1497,8 +1491,6 @@
     <members>PPM_Reports/Provider_Directory_Locations</members>
     <members>PPM_Reports/Provider_Rate_Report</members>
     <members>PPM_Reports/Service_Area_by_Providers</members>
-    <members>RAM_Reports</members>
-    <members>RAM_Reports-meta.xml</members>
     <members>RAM_Reports/Accepted_Rejected_Referral_History</members>
     <members>unfiled$public/Daily_Referral_Report</members>
     <name>Report</name>
