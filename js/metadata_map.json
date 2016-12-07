@@ -544,7 +544,7 @@
     "reports": [
         {
             "type": "Report",
-            "class": "MetadataFilenameParser",
+            "class": "ReportsParser",
             "extension": "report"
         }
     ],

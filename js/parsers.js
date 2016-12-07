@@ -111,15 +111,42 @@ function getElement(file, metadata, managed) {
 // ====================================================================================================
 // ======================================      Parsers     ============================================
 // ====================================================================================================
+function AuraBundleParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isFileMatch(file, metadata))
+        .map(file => getAuraName(file, metadata))
+}
+function AuthProviderParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isAuthProviderMatch(file, metadata))
+        .map(file => 'AuthProvider')
+}
 function BaseMetadataParser(metadata, contents) {
     return contents
         .filter(file => isFileExtensionMatch(file, metadata))
         .map(file => getFilename(file, metadata))
 }
-function SettingsParser(metadata, contents, managed) {
+function BusinessProcessParser(metadata, contents, managed) {
     return contents
-        .filter(file => isSettingsMatch(file, metadata))
-        .map(file => getFolderAndFilename(file, metadata)).sort()
+        .filter(file => isFileMatch(file, metadata))
+        .map(file => getProcessName(file, metadata))
+        .reduce(merge, [])
+}
+function CustomLabelsParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isMetadataXmlMatch(file, metadata))
+        .map(file => getElement(file, metadata))
+        .reduce(merge, [])
+}
+function CustomObjectParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isCustomObjectMatch(file, metadata, managed))
+        .map(file => getFilename(file, metadata))
+}
+function DocumentParser(metadata, contents, managed) {
+    return contents
+        .filter(file => isFileMatch(file, metadata))
+        .map(file => getFolderAndFilenameWithExt(file, metadata))
 }
 function MetadataFilenameParser(metadata, contents, managed) {
     return contents
@@ -137,52 +164,31 @@ function MetadataXmlElementParser(metadata, contents, managed) {
         .map(file => getFileAndElement(file, metadata, managed))
         .reduce(merge, [])
 }
-function AuthProviderParser(metadata, contents, managed) {
-    return contents
-        .filter(file => isAuthProviderMatch(file, metadata))
-        .map(file => 'AuthProvider')
-}
-function CustomLabelsParser(metadata, contents, managed) {
-    return contents
-        .filter(file => isMetadataXmlMatch(file, metadata))
-        .map(file => getElement(file, metadata))
-        .reduce(merge, [])
-}
-function CustomObjectParser(metadata, contents, managed) {
-    return contents
-        .filter(file => isCustomObjectMatch(file, metadata, managed))
-        .map(file => getFilename(file, metadata))
-}
 function RecordTypeParser(metadata, contents, managed) {
     return this.MetadataXmlElementParser(metadata, contents, managed)
 }
-function BusinessProcessParser(metadata, contents, managed) {
+function ReportsParser(metadata, contents, managed) {
     return contents
-        .filter(file => isFileMatch(file, metadata))
-        .map(file => getProcessName(file, metadata))
-        .reduce(merge, [])
+        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
 }
-function AuraBundleParser(metadata, contents, managed) {
+function SettingsParser(metadata, contents, managed) {
     return contents
-        .filter(file => isFileMatch(file, metadata))
-        .map(file => getAuraName(file, metadata))
-}
-function DocumentParser(metadata, contents, managed) {
-    return contents
-        .filter(file => isFileMatch(file, metadata))
-        .map(file => getFolderAndFilenameWithExt(file, metadata))
+        .filter(file => isSettingsMatch(file, metadata))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
 }
 module.exports = {
+    AuraBundleParser: AuraBundleParser,
     AuthProviderParser: AuthProviderParser,
     BaseMetadataParser: BaseMetadataParser,
-    SettingsParser: SettingsParser,
+    BusinessProcessParser: BusinessProcessParser,
+    CustomLabelsParser: CustomLabelsParser,
+    CustomObjectParser: CustomObjectParser,
+    DocumentParser: DocumentParser,
     MetadataFilenameParser: MetadataFilenameParser,
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,
-    CustomLabelsParser: CustomLabelsParser,
-    CustomObjectParser: CustomObjectParser,
     RecordTypeParser: RecordTypeParser,
-    BusinessProcessParser: BusinessProcessParser,
-    AuraBundleParser: AuraBundleParser,
-    DocumentParser: DocumentParser
+    ReportsParser: ReportsParser,
+    SettingsParser: SettingsParser
 }

@@ -133,6 +133,7 @@ describe('Generate a package XML', function () {
     it('should get Reports', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('Report', files, metadata)
+            expect(members).to.contain('PPM_Reports')
             expect(members).to.contain('PPM_Reports/ESBA_BHPN_Providers')
             expect(members).to.not.contain('PPM_Reports/ESBA_BHPN_Providers-meta.xml')
         })
