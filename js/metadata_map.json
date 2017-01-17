@@ -256,6 +256,16 @@
             "extension": "md"
         }
     ],
+    "customPermissions": [
+        {
+            "type": "CustomPermission",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "",
+            "version": "",
+            "extension": "customPermission"
+        }
+    ],
     "dashboards": [
         {
             "type": "Dashboard",
