@@ -148,6 +148,11 @@ function DocumentParser(metadata, contents, managed) {
         .filter(file => (isFileMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilenameWithExt(file, metadata))
 }
+function EmailParser(metadata, contents, managed) {
+    return contents
+        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
+}
 function MetadataFilenameParser(metadata, contents, managed) {
     return contents
         .filter(file => isBaseMatch(file, metadata))
