@@ -145,7 +145,7 @@ function CustomObjectParser(metadata, contents, managed) {
 }
 function DocumentParser(metadata, contents, managed) {
     return contents
-        .filter(file => isFileMatch(file, metadata))
+        .filter(file => (isFileMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilenameWithExt(file, metadata))
 }
 function MetadataFilenameParser(metadata, contents, managed) {
