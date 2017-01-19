@@ -7,7 +7,7 @@ change directories to you project directory, which contains your src folder and 
 
 or, the long version...
 
-`package-xml -D "./src" -n "Package Name" -v "37.0" -m -c`
+`package-xml -D "./src" -n "Package Name" -v "37.0" -m -c -i "InstallScriptHandler"`
 
 ## Options: (No options are required)
 * If no directory is provided, it will default to ./src
@@ -21,6 +21,7 @@ Options:
   -v, --version       The Saleforce API Version you wish to target with this
                       package.                                          [string]
   -n, --name          The name of the package.                          [string]
+  -i, --installScript The name the install handler class                [string]
   -m, --managed       Include Managed Package Fields. [boolean] [default: false]
   -c, --clean         Clean the Metadata files        [boolean] [default: false]
   -C, --clean-config  Clean the Metadata files from a provided configuration
