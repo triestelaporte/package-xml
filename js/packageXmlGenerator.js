@@ -27,6 +27,19 @@ module.exports = function (config) {
             self.package_name = null
         }
     }
+    
+    if (config.installScript) {
+        self.install_class = config.installScript
+    } else {
+        try {
+            var xmlString = fs.readFileSync(self.path + '/package.xml', 'utf8')
+            var xmlDocument = xml.parseXmlString(xmlString)
+            var installClasses = xmlDocument.find('./xmlns:installClass', 'http://soap.sforce.com/2006/04/metadata')
+            self.install_class = installClasses[0].text()
+        } catch (error) {
+            self.package_name = null
+        }
+    }
 
     if (config.version) {
         self.api_version = config.version
