@@ -145,8 +145,13 @@ function CustomObjectParser(metadata, contents, managed) {
 }
 function DocumentParser(metadata, contents, managed) {
     return contents
-        .filter(file => isFileMatch(file, metadata))
+        .filter(file => (isFileMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilenameWithExt(file, metadata))
+}
+function EmailParser(metadata, contents, managed) {
+    return contents
+        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
 }
 function MetadataFilenameParser(metadata, contents, managed) {
     return contents
@@ -185,6 +190,7 @@ module.exports = {
     CustomLabelsParser: CustomLabelsParser,
     CustomObjectParser: CustomObjectParser,
     DocumentParser: DocumentParser,
+    EmailParser: EmailParser,
     MetadataFilenameParser: MetadataFilenameParser,
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,

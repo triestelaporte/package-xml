@@ -298,7 +298,7 @@
     "email": [
         {
             "type": "EmailTemplate",
-            "class": "MetadataFilenameParser",
+            "class": "EmailParser",
             "star": true,
             "description": "",
             "version": "",
