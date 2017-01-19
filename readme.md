@@ -7,7 +7,7 @@ change directories to you project directory, which contains your src folder and 
 
 or, the long version...
 
-`package-xml -D "./src" -n "Package Name" -v "37.0" -m -c -i "installScriptHandler"`
+`package-xml -D "./src" -n "Package Name" -v "37.0" -m -c -i "InstallScriptHandler"`
 
 ## Options: (No options are required)
 * If no directory is provided, it will default to ./src
