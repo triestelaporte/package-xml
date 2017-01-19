@@ -190,6 +190,7 @@ module.exports = {
     CustomLabelsParser: CustomLabelsParser,
     CustomObjectParser: CustomObjectParser,
     DocumentParser: DocumentParser,
+    EmailParser: EmailParser,
     MetadataFilenameParser: MetadataFilenameParser,
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,
