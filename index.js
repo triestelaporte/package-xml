@@ -29,6 +29,12 @@ var argv = require('yargs')
         describe: 'The name of the package.',
         type: 'string'
     })
+    .option('i', {
+        alias: 'installScript',
+        demand: false,
+        describe: 'The name of the install script handler.',
+        type: 'string'
+    })
     .option('m', {
         alias: 'managed',
         demand: false,
