@@ -558,6 +558,16 @@
             "extension": "report"
         }
     ],
+    "roles": [
+        {
+            "type": "Role",
+            "class": "RolesParser",
+            "extension": "role",
+            "star": true,
+            "description": "Represents a role in your organization.",
+            "version": "24"
+        }
+    ],
     "settings": [
         {
             "type": "AccountSettings",

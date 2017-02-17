@@ -177,6 +177,11 @@ function ReportsParser(metadata, contents, managed) {
         .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilename(file, metadata)).sort()
 }
+function RolesParser(metadata, contents, managed) {
+    return contents
+        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
+        .map(file => getFolderAndFilename(file, metadata)).sort()
+}
 function SettingsParser(metadata, contents, managed) {
     return contents
         .filter(file => isSettingsMatch(file, metadata))
@@ -196,5 +201,6 @@ module.exports = {
     MetadataXmlElementParser: MetadataXmlElementParser,
     RecordTypeParser: RecordTypeParser,
     ReportsParser: ReportsParser,
+    RolesParser: RolesParser,
     SettingsParser: SettingsParser
 }

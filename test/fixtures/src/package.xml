@@ -1496,6 +1496,10 @@
     <name>Report</name>
   </types>
   <types>
+    <members>Practitioner_Partner_Manager.role</members>
+    <name>Role</name>
+  </types>
+  <types>
     <members>Account.Practitioner_Sharing_Read</members>
     <members>Account.Provider_Sharing_RW</members>
     <members>Contact.Business_Contacts_Read_Write</members>
