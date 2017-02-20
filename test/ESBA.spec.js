@@ -139,6 +139,13 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Roles', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Role', files, metadata)
+            expect(members).to.contain('Practitioner_Partner_Manager')
+        })
+    })
+
     it('should get Documents', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('Document', files, metadata)

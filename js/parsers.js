@@ -148,7 +148,7 @@ function DocumentParser(metadata, contents, managed) {
         .filter(file => (isFileMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilenameWithExt(file, metadata))
 }
-function EmailParser(metadata, contents, managed) {
+function FolderAndFilenameParser(metadata, contents, managed) {
     return contents
         .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
         .map(file => getFolderAndFilename(file, metadata)).sort()
@@ -172,16 +172,6 @@ function MetadataXmlElementParser(metadata, contents, managed) {
 function RecordTypeParser(metadata, contents, managed) {
     return this.MetadataXmlElementParser(metadata, contents, managed)
 }
-function ReportsParser(metadata, contents, managed) {
-    return contents
-        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
-        .map(file => getFolderAndFilename(file, metadata)).sort()
-}
-function RolesParser(metadata, contents, managed) {
-    return contents
-        .filter(file => (isBaseMatch(file, metadata) || isFolderMatch(file, metadata)))
-        .map(file => getFolderAndFilename(file, metadata)).sort()
-}
 function SettingsParser(metadata, contents, managed) {
     return contents
         .filter(file => isSettingsMatch(file, metadata))
@@ -195,7 +185,7 @@ module.exports = {
     CustomLabelsParser: CustomLabelsParser,
     CustomObjectParser: CustomObjectParser,
     DocumentParser: DocumentParser,
-    EmailParser: EmailParser,
+    FolderAndFilenameParser: FolderAndFilenameParser,
     MetadataFilenameParser: MetadataFilenameParser,
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,
