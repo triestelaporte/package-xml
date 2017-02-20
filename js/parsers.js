@@ -190,7 +190,5 @@ module.exports = {
     MetadataFolderParser: MetadataFolderParser,
     MetadataXmlElementParser: MetadataXmlElementParser,
     RecordTypeParser: RecordTypeParser,
-    ReportsParser: ReportsParser,
-    RolesParser: RolesParser,
     SettingsParser: SettingsParser
 }
