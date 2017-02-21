@@ -37,7 +37,7 @@ module.exports = function (config) {
             var installClasses = xmlDocument.find('./xmlns:installClass', 'http://soap.sforce.com/2006/04/metadata')
             self.install_class = installClasses[0].text()
         } catch (error) {
-            self.package_name = null
+            self.install_class = null
         }
     }
 

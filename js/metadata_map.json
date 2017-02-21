@@ -298,7 +298,7 @@
     "email": [
         {
             "type": "EmailTemplate",
-            "class": "EmailParser",
+            "class": "FolderAndFilenameParser",
             "star": true,
             "description": "",
             "version": "",
@@ -554,8 +554,18 @@
     "reports": [
         {
             "type": "Report",
-            "class": "ReportsParser",
+            "class": "FolderAndFilenameParser",
             "extension": "report"
+        }
+    ],
+    "roles": [
+        {
+            "type": "Role",
+            "class": "MetadataFilenameParser",
+            "extension": "role",
+            "star": true,
+            "description": "Represents a role in your organization.",
+            "version": "24"
         }
     ],
     "settings": [

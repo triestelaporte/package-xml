@@ -13,7 +13,6 @@ describe('Generate a package XML', function () {
     this.timeout(30000);
     // Private variables, set in Before action
     var root = '/Users/John/Github/package-xml/test/fixtures/src'
-    // var root = '/Users/John/Github/esba/src'
     var metadata, generator, getDirectoryContentsPromise
 
     before(function () {
@@ -82,19 +81,6 @@ describe('Generate a package XML', function () {
         return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
 
-    it('should create the actual file', function () {
-        var config = {
-            dir: '/Users/John/Github/esba/src',
-            name: 'ESBA SPARKLE',
-            version: '37.0'
-        }
-        return generator(config).then(markup => {
-            var path = root + '/package.xml'
-            fs.outputFile(path, markup)
-            var result = fs.readFileSync(path, 'utf8')
-            expect(markup).to.eql(result)
-        })
-    })
 
 
 })

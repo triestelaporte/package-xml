@@ -54,7 +54,7 @@ describe('Generate a package XML', function () {
     it('should get Apex Pages', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('ApexPage', files, metadata)
-            expect(members).to.contain('Practitioner_Create')
+            expect(members).to.contain('ClientProfileSharingPage')
         })
     })
 
@@ -139,6 +139,13 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Roles', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('Role', files, metadata)
+            expect(members).to.contain('Practitioner_Partner_Manager')
+        })
+    })
+
     it('should get Documents', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('Document', files, metadata)
@@ -155,17 +162,18 @@ describe('Generate a package XML', function () {
         return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
 
-    it('should generate the actual file', function () {
+    it('should create the actual file', function () {
         var config = {
             dir: root,
             name: 'ESBA SPARKLE',
             version: '37.0'
         }
         return generator(config).then(markup => {
-            expect(markup).to.match(/>Case.IsEscalated</)
-            expect(markup).to.match(/>Case.Description</)
+            var path = root + '/package.xml'
+            fs.outputFile(path, markup)
+            var result = fs.readFileSync(path, 'utf8')
+            expect(markup).to.eql(result)
         })
     })
-
 
 })
