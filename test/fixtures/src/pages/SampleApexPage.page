@@ -1,4 +1,52 @@
-<apex:page>
-<h1>Congratulations</h1>
-This is your new Page.
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" controller="HelloSPA">
+	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<head>
+		<title>Hello, SPA!</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+		<!-- Load CSS in head of page-->
+		<apex:stylesheet value="{!URLFOR($Resource.SLDS052, 'SLDS052/assets/styles/salesforce-lightning-design-system-vf.css')}" />
+		<apex:stylesheet value="{!URLFOR($Resource.HelloSPA, 'app.css')}"/>
+		
+		<!-- reference any VF variables needed in a single global JS object -->
+		<script type="text/javascript" charset="UTF-8">
+		$SPA ={
+			firstName : '{!$User.firstName}',
+			lastName  : '{!$User.lastName}',
+			jsr :{
+				getUsers: '{!$RemoteAction.HelloSPA.getUsers}',
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<div class="slds slds-p-around--xx-large slds-container--large slds-container--center">
+		    <header role="banner">
+		      <h1 class="slds-text-heading--label slds-m-bottom--small">
+		      	Hello, <span id="userName"></span></h1>
+		    </header>
+		    <div class="main" role="main">
+		    	<section>
+		    		<img src="{!URLFOR($Resource.HelloSPA, 'img/spa.gif')}" alt="SPA"/>
+		    	</section>
+				<section>
+					<h2>Users</h2>
+					<ul id="userList"></ul>
+				</section>
+		    </div>
+
+		    <footer role="contentinfo" class="slds-p-top--x-large slds-p-bottom--x-large">
+		      
+		      <div class="slds-grid slds-grid--align-spread">
+		        <p class="slds-col">Hello SPA</p>
+		        <p class="slds-col">Lightning Style</p>
+		      </div>
+		    </footer>
+
+		</div>
+		
+		<!-- Load Javascript at bottom of page body-->
+		<script type="text/javascript" src="{!URLFOR($Resource.HelloSPA, 'app.js')}"/>
+		
+	</body>
+	</html>
 </apex:page>
