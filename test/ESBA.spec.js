@@ -54,7 +54,7 @@ describe('Generate a package XML', function () {
     it('should get Apex Pages', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('ApexPage', files, metadata)
-            expect(members).to.contain('Practitioner_Create')
+            expect(members).to.contain('ClientProfileSharingPage')
         })
     })
 
