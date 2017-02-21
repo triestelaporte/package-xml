@@ -298,7 +298,7 @@
     "email": [
         {
             "type": "EmailTemplate",
-            "class": "FolderAndFileNameParser",
+            "class": "FolderAndFilenameParser",
             "star": true,
             "description": "",
             "version": "",
@@ -554,7 +554,7 @@
     "reports": [
         {
             "type": "Report",
-            "class": "FolderAndFileNameParser",
+            "class": "FolderAndFilenameParser",
             "extension": "report"
         }
     ],
