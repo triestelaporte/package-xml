@@ -73,7 +73,7 @@ if (argv.clean) {
 }
 
 function getPath(filePath) {
-    if (filePath.startsWith('/')) {
+    if (filePath.startsWith(path.sep)) {
         // Dir is absolute path, make sure it's real
         try {
             if (fs.realpathSync(filePath)) {
@@ -87,7 +87,7 @@ function getPath(filePath) {
     } else {
         // Dir is relative path.. try to normalize it
         try {
-            var filePath = path.normalize(process.cwd() + '/' + filePath)
+            var filePath = path.normalize(process.cwd() + path.sep + filePath)
             if (fs.realpathSync(filePath)) {
                 return filePath
             } else {

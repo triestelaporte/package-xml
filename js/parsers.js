@@ -1,12 +1,15 @@
 var xml = require('libxmljs')
 var fs = require('fs-extra')
 var utils = require('./packageUtils')
+var path = require('path')
+
 // ====================================================================================================
 // ======================================      Matchers     ===========================================
 // ====================================================================================================
 // Base
 function isDirMatch(file, metadata) {
-    return file.path.match(new RegExp('/src/' + metadata.dir + '/'))
+    var str = utils.escape(path.sep + 'src' + path.sep + metadata.dir + path.sep)
+    return file.path.match(new RegExp(str))
 }
 function isNameMatch(file, metadata) {
     return file.path.match(new RegExp(metadata.name + '.' + metadata.extension))
@@ -15,13 +18,13 @@ function isExtensionMatch(file, metadata) {
     return (metadata.extension === undefined && !file.path.endsWith('-meta.xml')) || file.path.endsWith(metadata.extension)
 }
 function isFile(file, metadata) {
-    // return file.stats.isDirectory()
     return file.stats.isFile()
 }
 
+
 // Composed
 function isBaseMatch(file, metadata) {
-    return isDirMatch(file, metadata) && isExtensionMatch(file, metadata)
+     return isDirMatch(file, metadata) && isExtensionMatch(file, metadata)
 }
 function isAuthProviderMatch(file, metadata) {
     return isFileExtensionMatch(file, metadata) && isNameMatch(file, metadata)
@@ -78,8 +81,8 @@ function getFilename(file, metadata) {
     return utils.getFilename(file.path, metadata.extension)
 }
 function getAuraName(file, metadata) {
-    var name = file.path.substring(0, file.path.lastIndexOf('/'))
-    name = name.substring(name.lastIndexOf('/') + 1)
+    var name = file.path.substring(0, file.path.lastIndexOf(path.sep))
+    name = name.substring(name.lastIndexOf(path.sep) + 1)
     return name
 }
 function getFolderAndFilename(file, metadata) {

@@ -246,12 +246,12 @@
             "extension": "community"
         }
     ],
-    "connectedApps": [
+    "connectedapps": [
         {
             "type": "ConnectedApp",
             "class": "MetadataFilenameParser",
             "star": true,
-            "description": "",
+            "description": "Represents a connected app configuration. A connected app integrates an application with Salesforce using APIs. Connected apps use standard SAML and OAuth protocols to authenticate, provide single sign-on, and provide tokens for use with Salesforce APIs. In addition to standard OAuth capabilities, connected apps allow Salesforce admins to set various security policies and have explicit control over who can use the corresponding apps. This type extends the Metadata metadata type and inherits its fullName field.",
             "version": "29",
             "extension": "connectedapp"
         }

@@ -29,7 +29,7 @@
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "args": ["test/ESBA.spec.js", "--colors"],
+            "args": ["test/Common.spec.js", "--colors"],
             "env": { }
         }
     ]

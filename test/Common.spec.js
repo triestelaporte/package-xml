@@ -7,12 +7,15 @@ var xml = require('libxmljs')
 var utils = require('./../js/packageUtils')
 var mocks = require('./../js/mocks')
 var getMembers = require('./../js/members')
+var path = require('path')
 
 describe('Generate a package XML', function () {
 
     this.timeout(30000);
-    // Private variables, set in Before action
-    var root = '/Users/John/Github/package-xml/test/fixtures/src'
+    var home = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME']
+    var fixtures = path.resolve(home, 'GitHub', 'package-xml', 'test', 'fixtures')
+    var root = path.resolve(fixtures, 'src')
+    var empty = path.resolve(fixtures, 'empty')
     var metadata, generator, getDirectoryContentsPromise
 
     before(function () {
@@ -70,17 +73,20 @@ describe('Generate a package XML', function () {
         })
     })
 
-
+    it('should get Connected Apps', function(){
+        return getDirectoryContentsPromise.then(files=>{
+            var members = getMembers('ConnectedApp', files, metadata, false)
+            expect(members).to.contain('sample')
+        })
+    })
 
     it('should make a sample Package XML from an empty directory', function () {
         var config = {
-            dir: '/Users/John/Github/package-xml/test/fixtures/empty',
+            dir: empty,
             name: 'Test & Package',
             version: '36.0'
         }
         return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
-
-
 
 })
