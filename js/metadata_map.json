@@ -176,6 +176,16 @@
             "extension": "authprovider"
         }
     ],
+    "cachePartitions": [
+        {
+            "type": "PlatformCachePartition",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a Platform Cache partition.",
+            "version": "35",
+            "extension": "cachePartition"
+        }
+    ],
     "components": [
         {
             "type": "ApexComponent",
