@@ -8,7 +8,7 @@ var path = require('path')
 // ====================================================================================================
 // Base
 function isDirMatch(file, metadata) {
-    var str = escape(path.sep + 'src' + path.sep + metadata.dir + path.sep)
+    var str = utils.escape(path.sep + 'src' + path.sep + metadata.dir + path.sep)
     return file.path.match(new RegExp(str))
 }
 function isNameMatch(file, metadata) {
@@ -21,11 +21,6 @@ function isFile(file, metadata) {
     return file.stats.isFile()
 }
 
-function escape(str){
-    if(/\\/.exec(str)){
-        return str.replace(/\\/g, '\\\\')
-    }
-}
 
 // Composed
 function isBaseMatch(file, metadata) {

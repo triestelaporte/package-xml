@@ -70,7 +70,12 @@ function getFolderAndFilenameWithExt(path, type) {
     return ''
 }
 
+function escape(str){
+    return /\\/.exec(str) ? str.replace(/\\/g, '\\\\') : str
+}
+
 module.exports = {
+    escape: escape,
     getDirectoryContents: getDirectoryContents,
     getMetadataTypeNames: getMetadataTypeNames,
     getMetadataTypes: getMetadataTypes,
