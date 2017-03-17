@@ -176,6 +176,13 @@
             "extension": "authprovider"
         }
     ],
+    "cachePartitions": [
+        {
+            "type": "PlatformCachePartition",
+            "class": "MetadataFilenameParser",
+            "extension": "cachePartition"
+        }
+    ],
     "components": [
         {
             "type": "ApexComponent",
