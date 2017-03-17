@@ -12,7 +12,8 @@ var path = require('path')
 describe('Generate a package XML', function () {
 
     this.timeout(30000);
-    var fixtures = path.resolve(process.env.HOME, 'GitHub', 'package-xml', 'test', 'fixtures')
+    var home = process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME']
+    var fixtures = path.resolve(home, 'GitHub', 'package-xml', 'test', 'fixtures')
     var root = path.resolve(fixtures, 'src')
     var empty = path.resolve(fixtures, 'empty')
     var metadata, generator, getDirectoryContentsPromise
@@ -87,7 +88,5 @@ describe('Generate a package XML', function () {
         }
         return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
-    
-
 
 })

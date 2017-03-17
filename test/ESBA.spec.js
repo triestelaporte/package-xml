@@ -153,27 +153,18 @@ describe('Generate a package XML', function () {
         })
     })
 
-    it('should make a sample Package XML from an empty directory', function () {
-        var config = {
-            dir: '/Users/John/Github/package-xml/test/fixtures/empty',
-            name: 'Test & Package',
-            version: '36.0'
-        }
-        return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
-    })
-
-    it('should create the actual file', function () {
-        var config = {
-            dir: root,
-            name: 'ESBA SPARKLE',
-            version: '37.0'
-        }
-        return generator(config).then(markup => {
-            var path = root + '/package.xml'
-            fs.outputFile(path, markup)
-            var result = fs.readFileSync(path, 'utf8')
-            expect(markup).to.eql(result)
-        })
-    })
+    // it('should create the actual file', function () {
+    //     var config = {
+    //         dir: root,
+    //         name: 'ESBA SPARKLE',
+    //         version: '37.0'
+    //     }
+    //     return generator(config).then(markup => {
+    //         var path = root + '/package.xml'
+    //         fs.outputFile(path, markup)
+    //         var result = fs.readFileSync(path, 'utf8')
+    //         expect(markup).to.eql(result)
+    //     })
+    // })
 
 })

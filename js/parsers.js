@@ -8,9 +8,7 @@ var path = require('path')
 // ====================================================================================================
 // Base
 function isDirMatch(file, metadata) {
-    let sep = path.sep
-    let str = escape(sep + 'src' + sep + metadata.dir)
-    
+    var str = escape(path.sep + 'src' + path.sep + metadata.dir + path.sep)
     return file.path.match(new RegExp(str))
 }
 function isNameMatch(file, metadata) {
@@ -20,7 +18,6 @@ function isExtensionMatch(file, metadata) {
     return (metadata.extension === undefined && !file.path.endsWith('-meta.xml')) || file.path.endsWith(metadata.extension)
 }
 function isFile(file, metadata) {
-    // return file.stats.isDirectory()
     return file.stats.isFile()
 }
 
