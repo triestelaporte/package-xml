@@ -12,7 +12,7 @@ describe('Generate a package XML', function () {
 
     this.timeout(30000);
     // Private variables, set in Before action
-    var root = '/Users/John/Github/package-xml/test/fixtures/src'
+    var root = 'C:\\Users\\mrchr\\Documents\\GitHub\\package-xml\\test\\fixtures\\src\\'
     var metadata, generator, getDirectoryContentsPromise
 
     before(function () {
@@ -70,17 +70,22 @@ describe('Generate a package XML', function () {
         })
     })
 
-
+    it('should get Connected Apps', function(){
+        return getDirectoryContentsPromise.then(files=>{
+            var members = getMembers('ConnectedApp', files, metadata, false)
+            expect(members).to.contain('sample')
+        })
+    })
 
     it('should make a sample Package XML from an empty directory', function () {
         var config = {
-            dir: '/Users/John/Github/package-xml/test/fixtures/empty',
+            dir: 'C:\\Users\\mrchr\\Documents\\GitHub\\package-xml\\test\\fixtures\\empty\\',
             name: 'Test & Package',
             version: '36.0'
         }
         return expect(generator(config)).to.eventually.eql(mocks.sampleXml)
     })
-
+    
 
 
 })

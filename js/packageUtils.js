@@ -1,6 +1,7 @@
 var fs = require('fs-extra')
 var metadata_map = require('./metadata_map.json')
 var _ = require('lodash')
+var _path = require('path')
 
 function getDirectoryContents(dir) {
     return new Promise(function (resolve, reject) {
@@ -39,13 +40,13 @@ function getMetadataTypes() {
 }
 function getFilename(path, extension) {
     if (path && extension) {
-        return path.substring(path.lastIndexOf('/') + 1, path.lastIndexOf(extension) - 1)
+        return path.substring(path.lastIndexOf(_path.sep) + 1, path.lastIndexOf(extension) - 1)
     }
     return ''
 }
 function getFolderAndFilename(path, extension, type) {
     if (path && extension) {
-        var seperator = '/src/' + type + '/'
+        var seperator = _path.sep + 'src' + _path.sep + type + _path.sep
         var start = path.indexOf(seperator) + seperator.length;
         var end = path.lastIndexOf(extension) - 1
         if(end > start){
@@ -60,7 +61,7 @@ function getFolderAndFilename(path, extension, type) {
 }
 function getFolderAndFilenameWithExt(path, type) {
     if (path) {
-        var seperator = '/src/' + type + '/'
+        var seperator = _path.sep + 'src' + _path.sep + type + _path.sep
         var start = path.indexOf(seperator) + seperator.length;
         var end = path.length
         var ret = path.substring(start, end)
