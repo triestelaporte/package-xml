@@ -31,7 +31,7 @@ Options:
 
 ## Clean Metadata
 
-The Clean Metadta option is available ass of version 2.1
+The Clean Metadata option is available as of version 2.1
 This option will clean out boilerplate metadata that can sometimes cause problems with deploying between different orgs. Also, if some metadata is not valid, visible, or enabled, then it shouldn't go in the package, hence we need to clean up the metadata.
 
 Below is the standard configuration for cleaning files. When using the "clean" option, this is the configuration that will be used.
