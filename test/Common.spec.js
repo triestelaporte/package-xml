@@ -80,6 +80,20 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Global Value Sets', function(){
+        return getDirectoryContentsPromise.then(files=>{
+            var members = getMembers('GlobalValueSet', files, metadata, false)
+            expect(members).to.contain('Territories')
+        })
+    })
+
+    it('should get Content Assets', function(){
+        return getDirectoryContentsPromise.then(files=>{
+            var members = getMembers('ContentAsset', files, metadata, false)
+            expect(members).to.contain('MyAsset')
+        })
+    })
+
     it('should make a sample Package XML from an empty directory', function () {
         var config = {
             dir: empty,
