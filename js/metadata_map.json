@@ -216,16 +216,6 @@
             "extension": "callCenter"
         }
     ],
-    "certs": [
-        {
-            "type": "Certificate",
-            "class": "MetadataFilenameParser",
-            "star": true,
-            "description": "Represents a certificate used for digital signatures which verify that requests are coming from your org. Certificates are used for either authenticated single sign-on with an external website, or when using your org as an identity provider.",
-            "version": "36",
-            "extension": "crt"
-        }
-    ],
     "cleanDataServices": [
         {
             "type": "CleanDataService",
