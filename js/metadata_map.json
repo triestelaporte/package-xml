@@ -196,6 +196,16 @@
             "extension": "component"
         }
     ],
+    "contentassets": [
+        {
+            "type": "ContentAsset",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents the metadata for creating an asset file. Asset files enable a Salesforce file to be used for org setup and configuration purposes.",
+            "version": "38",
+            "extension": "asset"
+        }
+    ],
     "classes": [
         {
             "type": "ApexClass",
@@ -331,8 +341,18 @@
             "class": "MetadataFilenameParser",
             "star": true,
             "description": "",
-            "version": "",
+            "version": "37",
             "extension": "globalPicklist"
+        }
+    ],
+    "globalValueSets": [
+        {
+            "type": "GlobalValueSet",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents the metadata for a global picklist value set, which is the set of shared values that custom picklist fields can use. A global value set isn't a field itself. (In contrast, the custom picklist fields that are based on a global picklist are of type ValueSet.) ",
+            "version": "38",
+            "extension": "globalValueSet"
         }
     ],
     "groups": [

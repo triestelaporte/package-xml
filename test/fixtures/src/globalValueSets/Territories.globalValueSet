@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+   <description>Updated:This is a basic global value set.</description>
+   <masterLabel>Territories</masterLabel>
+       <customValue>
+          <fullName>North</fullName>
+          <default>true</default>
+       </customValue>
+       <customValue>
+          <fullName>South</fullName>
+       </customValue>
+       <customValue>
+          <fullName>East</fullName>
+       </customValue>
+       <customValue>
+          <fullName>West</fullName>
+       </customValue>
+       <sorted>true</sorted>
+</GlobalValueSet>
+    
