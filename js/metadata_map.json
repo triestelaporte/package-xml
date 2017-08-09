@@ -236,16 +236,6 @@
             "extension": "cleanDataService"
         }
     ],
-    "communities": [
-        {
-            "type": "Community",
-            "class": "MetadataFilenameParser",
-            "star": true,
-            "description": "Represents a zone that contains Ideas or Chatter Answers objects. Zones are shared by the Ideas, Answers, and Chatter Answers features, allowing you to view and create zones from those locations.",
-            "version": "27",
-            "extension": "community"
-        }
-    ],
     "connectedapps": [
         {
             "type": "ConnectedApp",
