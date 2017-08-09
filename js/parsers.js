@@ -97,7 +97,14 @@ function getProcessName(file, metadata) {
 }
 function getXmlElements(file, metadata) {
     var xmlString = fs.readFileSync(file.path).toString()
-    var xmlDocument = xml.parseXmlString(xmlString)
+
+    try {
+        var xmlDocument = xml.parseXmlString(xmlString)
+    } catch (err) {
+        console.error('XML parsing error in:' + file.path)
+        throw err
+    }
+
     var elements = xmlDocument.find(metadata.options.item_xpath, 'http://soap.sforce.com/2006/04/metadata')
     return elements
 }
