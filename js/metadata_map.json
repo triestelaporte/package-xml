@@ -86,93 +86,11 @@
     ],
     "authproviders": [
         {
-            "type": "FacebookProvider",
-            "class": "AuthProviderParser",
-            "name": "FacebookProvider",
+            "type": "AuthProvider",
+            "class": "MetadataFilenameParser",
             "star": true,
             "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
             "version": "27",
-            "extension": "authprovider"
-        },
-        {
-            "type": "GoogleProvider",
-            "class": "AuthProviderParser",
-            "name": "GoogleProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "27",
-            "extension": "authprovider"
-        },
-        {
-            "type": "SalesforceProvider",
-            "class": "AuthProviderParser",
-            "name": "SalesforceProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "27",
-            "extension": "authprovider"
-        },
-        {
-            "type": "JanrainProvider",
-            "class": "AuthProviderParser",
-            "name": "JanrainProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "27",
-            "extension": "authprovider"
-        },
-        {
-            "type": "LinkedInProvider",
-            "class": "AuthProviderParser",
-            "name": "LinkedInProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "32",
-            "extension": "authprovider"
-        },
-        {
-            "type": "TwitterProvider",
-            "class": "AuthProviderParser",
-            "name": "TwitterProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "32",
-            "extension": "authprovider"
-        },
-        {
-            "type": "OpenIdConnectProvider",
-            "class": "AuthProviderParser",
-            "name": "OpenIdConnectProvider",
-            "star": true,
-            "description": "Represents an authentication provider (or auth provider) in your organization. An auth provider enables users to log in to your Salesforce organization using their login credentials from an external service provider such as Facebook© or Janrain©.",
-            "version": "29",
-            "extension": "authprovider"
-        },
-        {
-            "type": "MicrosoftACSProvider",
-            "class": "AuthProviderParser",
-            "name": "MicrosoftACSProvider",
-            "star": true,
-            "description": "Microsoft Access Control Service typically provides authentication for a Microsoft Office 365 service like SharePoint® Online. ",
-            "version": "31",
-            "extension": "authprovider"
-        },
-        {
-            "type": "GitHubProvider",
-            "class": "AuthProviderParser",
-            "name": "GitHubProvider",
-            "star": true,
-            "description": "Use the GitHub provider to log in users of your Force.com app to GitHub using OAuth. When logged in to GitHub, your app can make calls to GitHub APIs. The GitHub provider isn’t available as a single sign-on provider, which means users can’t log in to your Salesforce organization using their GitHub login credentials. ",
-            "version": "35",
-            "extension": "authprovider"
-        },
-        {
-            "type": "CustomProvider",
-            "class": "AuthProviderParser",
-            "name": "CustomProvider",
-            "star": true,
-            "description": "A provider configured with a custom authentication provider plug-in. ",
-            "version": "36",
             "extension": "authprovider"
         }
     ],
