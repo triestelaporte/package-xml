@@ -37,7 +37,7 @@ function getMetadataTypes() {
 }
 function getFilename(path, extension) {
     if (path && extension) {
-        return path.substring(path.lastIndexOf(escape(_path.sep)) + 1, path.lastIndexOf(extension) - 1)
+        return path.substring(path.lastIndexOf(_path.sep) + 1, path.lastIndexOf(extension) - 1)
     }
     return ''
 }
