@@ -722,6 +722,16 @@
             "extension": "resource"
         }
     ],
+    "standardValueSets": [
+        {
+            "type": "StandardValueSet",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Standard picklists are represented by the StandardValueSet type",
+            "version": "38",
+            "extension": "standardValueSet"
+        }
+    ],    
     "tabs": [
         {
             "type": "CustomTab",
