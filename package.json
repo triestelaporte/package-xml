@@ -1,6 +1,6 @@
 {
-  "name": "package-xml",
-  "version": "2.4.2",
+  "name": "cs-package-xml",
+  "version": "2.4.3",
   "description": "Build a Salesforce Package.xml file from a src directory",
   "main": "index.js",
   "bin": {
@@ -21,7 +21,7 @@
     "xml",
     "salesforce"
   ],
-  "author": "John Nelson <john.nelson@codescience.com> (http://codescience.com)",
+  "author": "Codescience <info@codescience.com> (http://codescience.com)",
   "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-  <fullName>ESBA SPARKLE</fullName>
+  <fullName>PROJECT SPARKLE</fullName>
   <types>
     <members>AccountTriggerHandlerCS</members>
     <members>AccountTriggerHandlerCS_Test</members>
@@ -223,7 +223,7 @@
   <types>
     <members>Case_Console</members>
     <members>Domain_Data</members>
-    <members>ESBA</members>
+    <members>PROJECT</members>
     <members>PPM</members>
     <members>RAM</members>
     <members>RAMConsole</members>
@@ -396,7 +396,7 @@
     <members>Appointment__c.Department__c</members>
     <members>Appointment__c.Duration__c</members>
     <members>Appointment__c.EHRPatient__c</members>
-    <members>Appointment__c.ESBA_Client_Number__c</members>
+    <members>Appointment__c.Client_Number__c</members>
     <members>Appointment__c.Emergency_Contact_Name__c</members>
     <members>Appointment__c.Emergency_Contact_Number__c</members>
     <members>Appointment__c.Practitioner__c</members>
@@ -787,7 +787,7 @@
     <members>HealthCloudGA__EhrPatient__c.Candidate_Patient__c</members>
     <members>HealthCloudGA__EhrPatient__c.Client_Email__c</members>
     <members>HealthCloudGA__EhrPatient__c.Consent_Form_Signed_Date__c</members>
-    <members>HealthCloudGA__EhrPatient__c.ESBA_Client_Id__c</members>
+    <members>HealthCloudGA__EhrPatient__c.Project_Client_Id__c</members>
     <members>HealthCloudGA__EhrPatient__c.Emergency_Contact__c</members>
     <members>HealthCloudGA__EhrPatient__c.Ethnicity__c</members>
     <members>HealthCloudGA__EhrPatient__c.Home_Phone__c</members>
@@ -820,7 +820,7 @@
     <members>HealthCloudGA__EhrPractitioner__c.Birth_Month__c</members>
     <members>HealthCloudGA__EhrPractitioner__c.Board_Certified__c</members>
     <members>HealthCloudGA__EhrPractitioner__c.Duplicate__c</members>
-    <members>HealthCloudGA__EhrPractitioner__c.ESBA_Practitioner_Id__c</members>
+    <members>HealthCloudGA__EhrPractitioner__c.Project_Practitioner_Id__c</members>
     <members>HealthCloudGA__EhrPractitioner__c.Employee_ID__c</members>
     <members>HealthCloudGA__EhrPractitioner__c.IndividualId__c</members>
     <members>HealthCloudGA__EhrPractitioner__c.Last_4_of_SSN__c</members>
@@ -995,7 +995,7 @@
     <members>Provider_Vetting__c.Funding_Sources__c</members>
     <members>Provider_Vetting__c.G_Supervision_Evaluation__c</members>
     <members>Provider_Vetting__c.Has_direct_contract_with_Kaiser__c</members>
-    <members>Provider_Vetting__c.How_did_you_hear_about_ESBA__c</members>
+    <members>Provider_Vetting__c.How_did_you_hear_about_Project__c</members>
     <members>Provider_Vetting__c.How_many_Staff_members__c</members>
     <members>Provider_Vetting__c.How_many_clients__c</members>
     <members>Provider_Vetting__c.Languages__c</members>
@@ -1177,7 +1177,7 @@
     <name>CustomTab</name>
   </types>
   <types>
-    <members>ESBA_Assets/ESBALogo.png</members>
+    <members>Project_Assets/ProjectLogo.png</members>
     <members>HealthCloudGA__HealthCloudAssets/easter_seals_logo_1_png.png</members>
     <name>Document</name>
   </types>
@@ -1310,7 +1310,7 @@
     <name>Layout</name>
   </types>
   <types>
-    <members>ESBA_Letterhead</members>
+    <members>Project_Letterhead</members>
     <name>Letterhead</name>
   </types>
   <types>
@@ -1424,11 +1424,11 @@
     <members>Chatter Moderator User</members>
     <members>ContractManager</members>
     <members>Customer Community User</members>
-    <members>ESBA Integration Profile</members>
-    <members>ESBA PPM Profile</members>
-    <members>ESBA Practitioner Manager</members>
-    <members>ESBA Profile</members>
-    <members>ESBA Provider Manager</members>
+    <members>Project Integration Profile</members>
+    <members>Project PPM Profile</members>
+    <members>Project Practitioner Manager</members>
+    <members>Project Profile</members>
+    <members>Project Provider Manager</members>
     <members>Guest License User</members>
     <members>MarketingProfile</members>
     <members>Partner Community User</members>
@@ -1482,7 +1482,7 @@
     <name>RecordType</name>
   </types>
   <types>
-    <members>PPM_Reports/ESBA_BHPN_Providers</members>
+    <members>PPM_Reports/Project_BHPN_Providers</members>
     <members>PPM_Reports/Pracititioners_by_Pracititoner_Type</members>
     <members>PPM_Reports/Pracititioners_with_Licenses_Expiring</members>
     <members>PPM_Reports/Prospective_Providers_Documents_Receiv</members>
@@ -1507,7 +1507,7 @@
     <name>SharingCriteriaRule</name>
   </types>
   <types>
-    <members>ESBA</members>
+    <members>Project</members>
     <members>PractitionerSearchDemoImage</members>
     <members>SLDS202</members>
     <members>forcetk</members>
@@ -1648,7 +1648,7 @@
     <members>Authorization__c.Auth_Status_Update_to_Active</members>
     <members>Authorization__c.Auth_Status_Update_to_Expired</members>
     <members>Case.Discharge_Date_to_Today</members>
-    <members>Case.Discharge_Initiator_to_ESBA</members>
+    <members>Case.Discharge_Initiator_to_Project</members>
     <members>Case.Discharge_Reason_To_Contact_Not_Initiate</members>
     <members>Case.Status_to_Discharge</members>
     <members>County__c.County_External_Id</members>
