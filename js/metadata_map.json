@@ -580,7 +580,7 @@
     ],
     "settings": [
         {
-            "type": "AccountSettings",
+            "type": "Settings",
             "description": "Represents an organization’s account settings for account teams, account owner report, and the View Hierarchy link.",
             "version": "29",
             "class": "SettingsParser",
@@ -588,7 +588,7 @@
             "extension": "settings"
         },
         {
-            "type": "ActivitiesSettings",
+            "type": "Settings",
             "description": "Represents an organization’s activity settings, and its user interface settings for the calendar.",
             "version": "28",
             "class": "SettingsParser",
@@ -596,7 +596,7 @@
             "extension": "settings"
         },
         {
-            "type": "AddressSettings",
+            "type": "Settings",
             "description": "Represents the configuration of country and state picklists.",
             "version": "27",
             "class": "SettingsParser",
@@ -612,7 +612,7 @@
             "extension": "settings"
         },
         {
-            "type": "CaseSettings",
+            "type": "Settings",
             "description": "Represents an organization’s case settings, such as the default case owner, which case-related features are enabled, and which email templates are used for various case activities.",
             "version": "27",
             "class": "SettingsParser",
@@ -620,7 +620,7 @@
             "extension": "settings"
         },
         {
-            "type": "ChatterAnswersSettings",
+            "type": "Settings",
             "description": "Represents the metadata used to manage settings for Chatter Answers.",
             "version": "27",
             "class": "SettingsParser",
@@ -628,7 +628,7 @@
             "extension": "settings"
         },
         {
-            "type": "CompanySettings",
+            "type": "Settings",
             "description": "Represents global settings that affect multiple features in your organization.",
             "version": "27",
             "class": "SettingsParser",
@@ -636,7 +636,7 @@
             "extension": "settings"
         },
         {
-            "type": "ContractSettings",
+            "type": "Settings",
             "description": "Represents contract settings.",
             "version": "27",
             "class": "SettingsParser",
@@ -644,7 +644,7 @@
             "extension": "settings"
         },
         {
-            "type": "EntitlementSettings",
+            "type": "Settings",
             "description": "Represents an organization’s entitlement settings.",
             "version": "27",
             "class": "SettingsParser",
@@ -652,7 +652,7 @@
             "extension": "settings"
         },
         {
-            "type": "ForecastingSettings",
+            "type": "Settings",
             "description": "Represents the Collaborative Forecasts settings options.",
             "version": "28",
             "class": "SettingsParser",
@@ -660,7 +660,7 @@
             "extension": "settings"
         },
         {
-            "type": "IdeasSettings",
+            "type": "Settings",
             "description": "Represents the metadata used to manage settings for Ideas.",
             "version": "27",
             "class": "SettingsParser",
@@ -668,7 +668,7 @@
             "extension": "settings"
         },
         {
-            "type": "KnowledgeSettings",
+            "type": "Settings",
             "description": "Represents the metadata used to manage settings for Salesforce Knowledge.",
             "version": "27",
             "class": "SettingsParser",
@@ -676,7 +676,7 @@
             "extension": "settings"
         },
         {
-            "type": "MobileSettings",
+            "type": "Settings",
             "description": "Represents an organization’s mobile settings.",
             "version": "27",
             "class": "SettingsParser",
@@ -684,7 +684,7 @@
             "extension": "settings"
         },
         {
-            "type": "SecuritySettings",
+            "type": "Settings",
             "description": "Represents an organization’s security settings. Security settings define trusted IP ranges for network access, password and login requirements, and session expiration and security settings.",
             "version": "27",
             "class": "SettingsParser",
