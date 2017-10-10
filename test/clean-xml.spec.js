@@ -8,7 +8,7 @@ describe('Clean the XML', function () {
     this.timeout(30000)
 
     var config = {
-        dir: '/Users/John/Github/esba/src'
+        dir: '/Users/me/Github/project/src'
     }
 
     it('should Clean the Metdata of unnecessary data', function () {

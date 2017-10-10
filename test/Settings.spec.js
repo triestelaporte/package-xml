@@ -12,8 +12,7 @@ describe('Generate a package XML', function () {
 
     this.timeout(30000);
     // Private variables, set in Before action
-    var root = '/Users/John/Github/package-xml/test/fixtures/src'
-    // var root = '/Users/John/Github/esba/src'
+    var root = '/Users/me/Github/package-xml/test/fixtures/src'
     var metadata, generator, getDirectoryContentsPromise
 
     before(function () {
