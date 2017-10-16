@@ -23,11 +23,11 @@ function getDirectoryContents(dir) {
     })
 }
 function getMetadataTypeNames() {
-    return _.flatten(Object.keys(metadata_map).map(key => {
+    return _.uniq(_.flatten(Object.keys(metadata_map).map(key => {
         return metadata_map[key].map(val => {
             return val.type
         })
-    })).sort()
+    }))).sort()
 }
 function getMetadataTypes() {
     return _.flatten(Object.keys(metadata_map).map(key => {
