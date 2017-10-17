@@ -441,6 +441,13 @@
             "extension": "profile"
         }
     ],
+    "profileSessionSettings": [
+        {
+            "type": "ProfileSessionSetting",
+            "class": "MetadataFilenameParser",
+            "extension": "profileSessionSetting"
+        }
+    ],
     "permissionsets": [
         {
             "type": "PermissionSet",
@@ -731,7 +738,7 @@
             "version": "38",
             "extension": "standardValueSet"
         }
-    ],    
+    ],
     "tabs": [
         {
             "type": "CustomTab",
