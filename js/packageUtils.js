@@ -58,7 +58,7 @@ function getFolderAndFilename(path, extension, type) {
 }
 function getFolderAndFilenameWithExt(path, type) {
     if (path) {
-        var seperator = _path.sep + 'src' + _path.sep + type + _path.sep
+        var seperator = '/src/' + type + '/'
         var start = path.indexOf(escape(seperator)) + seperator.length;
         var end = path.length
         var ret = path.substring(start, end)
