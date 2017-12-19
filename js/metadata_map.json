@@ -529,7 +529,7 @@
             "extension": "settings"
         },
         {
-            "type": "BusinessHoursSettings",
+            "type": "Settings",
             "description": "Represents the metadata used to manage settings for business hours and holidays in entitlements, entitlement templates, campaigns, and cases.",
             "version": "29",
             "class": "SettingsParser",
