@@ -44,13 +44,15 @@ function getFilename(path, extension) {
 function getFolderAndFilename(path, extension, type) {
     if (path && extension) {
         var seperator = _path.sep + 'src' + _path.sep + type + _path.sep
-        var start = path.indexOf(escape(seperator)) + seperator.length;
+        var start = path.indexOf(seperator) + seperator.length;
         var end = path.lastIndexOf(extension) - 1
         if(end > start){
             var ret = path.substring(start, end)
+            ret = ret.replace(/\\/g, "/");
             return ret
         } else {
             var ret = path.substring(start)
+            ret = ret.replace(/\\/g, "/");
             return ret
         }
     }
@@ -59,9 +61,11 @@ function getFolderAndFilename(path, extension, type) {
 function getFolderAndFilenameWithExt(path, type) {
     if (path) {
         var seperator = _path.sep + 'src' + _path.sep + type + _path.sep
-        var start = path.indexOf(escape(seperator)) + seperator.length;
+        
+        var start = path.indexOf(seperator) + seperator.length;
         var end = path.length
         var ret = path.substring(start, end)
+        ret = ret.replace(/\\/g, "/");
         return ret
     }
     return ''
