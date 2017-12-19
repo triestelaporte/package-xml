@@ -187,7 +187,7 @@
     "dashboards": [
         {
             "type": "Dashboard",
-            "class": "MetadataFilenameParser",
+            "class": "FolderAndFilenameParser",
             "star": false,
             "description": "Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.",
             "version": "14",
