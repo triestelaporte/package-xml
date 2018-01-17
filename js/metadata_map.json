@@ -60,7 +60,7 @@
     ],
     "autoResponseRules": [
         {
-            "type": "AutoResponseRules",
+            "type": "AutoResponseRule",
             "class": "MetadataXmlElementParser",
             "star": true,
             "description": "Represents an auto-response rule that sets conditions for sending automatic email responses to lead or case submissions based on the attributes of the submitted record.",
@@ -73,7 +73,7 @@
     ],
     "assignmentRules": [
         {
-            "type": "AssignmentRules",
+            "type": "AssignmentRule",
             "class": "MetadataXmlElementParser",
             "star": true,
             "description": "Represents assignment rules that allow you to automatically route cases to the appropriate users or queues.",
@@ -221,6 +221,19 @@
             "description": "",
             "version": "",
             "extension": "email"
+        }
+    ],
+    "escalationRules": [
+        {
+            "type": "EscalationRule",
+            "class": "MetadataXmlElementParser",
+            "star": true,
+            "description": "Represents escalation rules that allow you to automatically route cases to the appropriate users or queues.",
+            "version": "27",
+            "extension": "escalationRules",
+            "options": {
+                "item_xpath": "./xmlns:escalationRule/xmlns:fullName"
+            }
         }
     ],
     "flexipages": [
