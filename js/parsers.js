@@ -57,7 +57,7 @@ function isManagedObjectFilter(file) {
     return file.path.match(/__[\s\S]*__/)
 }
 function isCustomObjectFilter(file) {
-    return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/) || file.path.match(/__kav.object$/)
+    return file.path.match(/__c.object$/) || file.path.match(/__mdt.object$/) || file.path.match(/__kav.object$/) || file.path.match(/__e.object$/)
 }
 function customElementFilter(element, metadata) {
     var customOnlyTypes = ['CustomField']
