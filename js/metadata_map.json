@@ -784,6 +784,14 @@
             }
         },
         {
+            "type": "WorkflowOutboundMessage",
+            "class": "MetadataXmlElementParser",
+            "extension": "workflow",
+            "options": {
+                "item_xpath": "./xmlns:outboundMessages/xmlns:fullName"
+            }
+        },
+        {
             "type": "WorkflowFieldUpdate",
             "class": "MetadataXmlElementParser",
             "extension": "workflow",
