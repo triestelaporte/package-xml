@@ -29,6 +29,16 @@
             "extension": "app"
         }
     ],
+    "customApplicationComponents": [
+        {
+            "type": "CustomApplicationComponent",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a custom console component (Visualforce page) assigned to a CustomApplication that is marked as a Salesforce console.",
+            "version": "10",
+            "extension": "app"
+        }
+    ],
     "appMenus": [
         {
             "type": "AppMenu",
