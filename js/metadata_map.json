@@ -36,7 +36,7 @@
             "star": true,
             "description": "Represents a custom console component (Visualforce page) assigned to a CustomApplication that is marked as a Salesforce console.",
             "version": "10",
-            "extension": "app"
+            "extension": "customApplicationComponent"
         }
     ],
     "appMenus": [
