@@ -648,7 +648,7 @@
             "extension": "settings"
         },
         {
-            "type": "NameSettings",
+            "type": "Settings",
             "description": "Enables or disables middle name and suffix attributes for the following person objects: Contact, Lead, Person Account, and User.",
             "version": "31",
             "class": "SettingsParser",
@@ -656,7 +656,7 @@
             "extension": "settings"
         },
         {
-            "type": "OpportunitySettings",
+            "type": "Settings",
             "description": "Represents organization preferences for features such as automatic opportunity updates and similar-opportunity filters.",
             "version": "28",
             "class": "SettingsParser",
@@ -664,7 +664,7 @@
             "extension": "settings"
         },
         {
-            "type": "OrderSettings",
+            "type": "Settings",
             "description": "Represents order settings.",
             "version": "30",
             "class": "SettingsParser",
@@ -672,7 +672,7 @@
             "extension": "settings"
         },
         {
-            "type": "OrgPreferenceSettings",
+            "type": "Settings",
             "description": "Represents the unique org preference settings in a Salesforce org.",
             "version": "37",
             "class": "SettingsParser",
@@ -680,7 +680,7 @@
             "extension": "settings"
         },
         {
-            "type": "PathAssistantSettings",
+            "type": "Settings",
             "description": "Represents the Sales Path preference setting.",
             "version": "34",
             "class": "SettingsParser",
@@ -688,7 +688,7 @@
             "extension": "settings"
         },
         {
-            "type": "ProductSettings",
+            "type": "Settings",
             "description": "Represents organization preferences for quantity schedules, revenue schedules, and active flag interaction with prices.",
             "version": "28",
             "class": "SettingsParser",
@@ -696,7 +696,7 @@
             "extension": "settings"
         },
         {
-            "type": "QuoteSettings",
+            "type": "Settings",
             "description": "Enables or disables Quotes, which show proposed prices for products and services.",
             "version": "28",
             "class": "SettingsParser",
