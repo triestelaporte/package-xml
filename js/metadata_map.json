@@ -266,6 +266,16 @@
             "extension": "flow"
         }
     ],
+    "flowDefinitions": [
+        {
+            "type": "FlowDefinition",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents the flow definition’s description and active flow version number.",
+            "version": "",
+            "extension": "flowDefinition"
+        }
+    ],
     "globalPicklists": [
         {
             "type": "GlobalPicklist",
@@ -336,6 +346,16 @@
             "type": "Layout",
             "class": "MetadataFilenameParser",
             "extension": "layout"
+        }
+    ],
+    "LeadConvertSettings": [
+        {
+            "type": "LeadConvertSettings",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents settings for Lead Conversion to Account/Contact/Opportunity.",
+            "version": "39",
+            "extension": "LeadConvertSetting"
         }
     ],
     "letterhead": [
