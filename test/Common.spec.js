@@ -45,6 +45,13 @@ describe('Generate a package XML', function () {
         })
     })
 
+    it('should get Platform Events', function () {
+        return getDirectoryContentsPromise.then(files => {
+            var members = getMembers('CustomObject', files, metadata, true)
+            expect(members).to.contain('PlatformEvent__e')
+    })
+    })
+
     it('should get Custom Apex Classes', function () {
         return getDirectoryContentsPromise.then(files => {
             var members = getMembers('ApexClass', files, metadata, true)

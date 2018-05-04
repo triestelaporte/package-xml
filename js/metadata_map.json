@@ -29,6 +29,16 @@
             "extension": "app"
         }
     ],
+    "customApplicationComponents": [
+        {
+            "type": "CustomApplicationComponent",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents a custom console component (Visualforce page) assigned to a CustomApplication that is marked as a Salesforce console.",
+            "version": "10",
+            "extension": "customApplicationComponent"
+        }
+    ],
     "appMenus": [
         {
             "type": "AppMenu",
@@ -60,7 +70,7 @@
     ],
     "autoResponseRules": [
         {
-            "type": "AutoResponseRules",
+            "type": "AutoResponseRule",
             "class": "MetadataXmlElementParser",
             "star": true,
             "description": "Represents an auto-response rule that sets conditions for sending automatic email responses to lead or case submissions based on the attributes of the submitted record.",
@@ -73,7 +83,7 @@
     ],
     "assignmentRules": [
         {
-            "type": "AssignmentRules",
+            "type": "AssignmentRule",
             "class": "MetadataXmlElementParser",
             "star": true,
             "description": "Represents assignment rules that allow you to automatically route cases to the appropriate users or queues.",
@@ -187,7 +197,7 @@
     "dashboards": [
         {
             "type": "Dashboard",
-            "class": "MetadataFilenameParser",
+            "class": "FolderAndFilenameParser",
             "star": false,
             "description": "Represents a dashboard. Dashboards are visual representations of data that allow you to see key metrics and performance at a glance.",
             "version": "14",
@@ -223,6 +233,19 @@
             "extension": "email"
         }
     ],
+    "escalationRules": [
+        {
+            "type": "EscalationRule",
+            "class": "MetadataXmlElementParser",
+            "star": true,
+            "description": "Represents escalation rules that allow you to automatically route cases to the appropriate users or queues.",
+            "version": "27",
+            "extension": "escalationRules",
+            "options": {
+                "item_xpath": "./xmlns:escalationRule/xmlns:fullName"
+            }
+        }
+    ],
     "flexipages": [
         {
             "type": "FlexiPage",
@@ -241,6 +264,16 @@
             "description": "",
             "version": "",
             "extension": "flow"
+        }
+    ],
+    "flowDefinitions": [
+        {
+            "type": "FlowDefinition",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents the flow definition’s description and active flow version number.",
+            "version": "",
+            "extension": "flowDefinition"
         }
     ],
     "globalPicklists": [
@@ -313,6 +346,16 @@
             "type": "Layout",
             "class": "MetadataFilenameParser",
             "extension": "layout"
+        }
+    ],
+    "LeadConvertSettings": [
+        {
+            "type": "LeadConvertSettings",
+            "class": "MetadataFilenameParser",
+            "star": true,
+            "description": "Represents settings for Lead Conversion to Account/Contact/Opportunity.",
+            "version": "39",
+            "extension": "LeadConvertSetting"
         }
     ],
     "letterhead": [
@@ -529,7 +572,7 @@
             "extension": "settings"
         },
         {
-            "type": "BusinessHoursSettings",
+            "type": "Settings",
             "description": "Represents the metadata used to manage settings for business hours and holidays in entitlements, entitlement templates, campaigns, and cases.",
             "version": "29",
             "class": "SettingsParser",
@@ -625,7 +668,7 @@
             "extension": "settings"
         },
         {
-            "type": "NameSettings",
+            "type": "Settings",
             "description": "Enables or disables middle name and suffix attributes for the following person objects: Contact, Lead, Person Account, and User.",
             "version": "31",
             "class": "SettingsParser",
@@ -633,7 +676,7 @@
             "extension": "settings"
         },
         {
-            "type": "OpportunitySettings",
+            "type": "Settings",
             "description": "Represents organization preferences for features such as automatic opportunity updates and similar-opportunity filters.",
             "version": "28",
             "class": "SettingsParser",
@@ -641,7 +684,7 @@
             "extension": "settings"
         },
         {
-            "type": "OrderSettings",
+            "type": "Settings",
             "description": "Represents order settings.",
             "version": "30",
             "class": "SettingsParser",
@@ -649,7 +692,7 @@
             "extension": "settings"
         },
         {
-            "type": "OrgPreferenceSettings",
+            "type": "Settings",
             "description": "Represents the unique org preference settings in a Salesforce org.",
             "version": "37",
             "class": "SettingsParser",
@@ -657,7 +700,7 @@
             "extension": "settings"
         },
         {
-            "type": "PathAssistantSettings",
+            "type": "Settings",
             "description": "Represents the Sales Path preference setting.",
             "version": "34",
             "class": "SettingsParser",
@@ -665,7 +708,7 @@
             "extension": "settings"
         },
         {
-            "type": "ProductSettings",
+            "type": "Settings",
             "description": "Represents organization preferences for quantity schedules, revenue schedules, and active flag interaction with prices.",
             "version": "28",
             "class": "SettingsParser",
@@ -673,7 +716,7 @@
             "extension": "settings"
         },
         {
-            "type": "QuoteSettings",
+            "type": "Settings",
             "description": "Enables or disables Quotes, which show proposed prices for products and services.",
             "version": "28",
             "class": "SettingsParser",
@@ -781,6 +824,14 @@
             "extension": "workflow",
             "options": {
                 "item_xpath": "./xmlns:alerts/xmlns:fullName"
+            }
+        },
+        {
+            "type": "WorkflowOutboundMessage",
+            "class": "MetadataXmlElementParser",
+            "extension": "workflow",
+            "options": {
+                "item_xpath": "./xmlns:outboundMessages/xmlns:fullName"
             }
         },
         {

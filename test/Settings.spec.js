@@ -23,91 +23,91 @@ describe('Generate a package XML', function () {
 
     it('should get Account Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('AccountSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Account')
         })
     })
 
     it('should get Activities Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('ActivitiesSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Activities')
         })
     })
 
     it('should get Address Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('AddressSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Address')
         })
     })
 
     it('should get BusinessHours Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('BusinessHoursSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('BusinessHours')
         })
     })
 
     it('should get Case Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('CaseSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Case')
         })
     })
 
     it('should get ChatterAnswers Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('ChatterAnswersSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('ChatterAnswers')
         })
     })
 
     it('should get Company Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('CompanySettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Company')
         })
     })
 
     it('should get Contract Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('ContractSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Contract')
         })
     })
 
     it('should get Company Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('CompanySettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Company')
         })
     })
 
     it('should get Entitlement Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('EntitlementSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Entitlement')
         })
     })
 
     it('should get Forecasting Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('ForecastingSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Forecasting')
         })
     })
 
     it('should get Ideas Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('IdeasSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Ideas')
         })
     })
 
     it('should get Knowledge Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('KnowledgeSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Knowledge')
         })
     })
@@ -121,7 +121,7 @@ describe('Generate a package XML', function () {
 
     it('should get Mobile Settings', function () {
         return getDirectoryContentsPromise.then(files => {
-            var members = getMembers('MobileSettings', files, metadata, true)
+            var members = getMembers('Settings', files, metadata, true)
             expect(members).to.contain('Mobile')
         })
     })
